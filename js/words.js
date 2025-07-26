@@ -114,11 +114,18 @@ class WordManager {
       </td>
       <td>
         <div class="meaning-text">${wordData.meaning}</div>
-        <a href="${googleTranslateUrl}" target="_blank" class="translate-link" title="查看更多翻译">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="currentColor"/>
-          </svg>
-        </a>
+        <div class="translation-controls">
+          <button class="pronunciation-btn" data-word="${wordData.word}" title="播放发音" onclick="this.disabled=true; wordManager.playGoogleTTS('${wordData.word}', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
+            </svg>
+          </button>
+          <a href="${googleTranslateUrl}" target="_blank" class="translate-link" title="查看更多翻译">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
       </td>
       <td>
         <span class="category-tag">${sceneName}</span>
@@ -211,6 +218,94 @@ class WordManager {
         }
       });
     });
+  }
+
+  // 播放谷歌 TTS 发音
+  playGoogleTTS(word, button) {
+    try {
+      // 创建音频URL，使用谷歌翻译的TTS服务
+      const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=${encodeURIComponent(word)}`;
+      
+      // 创建音频元素
+      const audio = new Audio(ttsUrl);
+      
+      // 设置音频事件
+      audio.onloadstart = () => {
+        button.innerHTML = '<span style="font-size: 12px;">播放中...</span>';
+      };
+      
+      audio.onended = () => {
+        button.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
+          </svg>
+        `;
+        button.disabled = false;
+      };
+      
+      audio.onerror = () => {
+        button.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
+          </svg>
+        `;
+        button.disabled = false;
+        console.error('播放失败，可能是网络问题或服务不可用');
+        
+        // 如果谷歌TTS失败，尝试使用浏览器内置的语音合成
+        this.playBrowserTTS(word, button);
+      };
+      
+      // 播放音频
+      audio.play().catch(err => {
+        console.error('播放失败:', err);
+        // 如果直接播放失败，尝试使用浏览器内置的语音合成
+        this.playBrowserTTS(word, button);
+      });
+      
+    } catch (error) {
+      console.error('TTS播放出错:', error);
+      button.disabled = false;
+      this.playBrowserTTS(word, button);
+    }
+  }
+
+  // 使用浏览器内置的语音合成作为备选方案
+  playBrowserTTS(word, button) {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.8;
+      utterance.pitch = 1;
+      
+      utterance.onstart = () => {
+        button.innerHTML = '<span style="font-size: 12px;">播放中...</span>';
+      };
+      
+      utterance.onend = () => {
+        button.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
+          </svg>
+        `;
+        button.disabled = false;
+      };
+      
+      utterance.onerror = () => {
+        button.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor"/>
+          </svg>
+        `;
+        button.disabled = false;
+        console.error('语音播放失败');
+      };
+      
+      speechSynthesis.speak(utterance);
+    } else {
+      button.disabled = false;
+      console.error('浏览器不支持语音合成');
+    }
   }
 }
 

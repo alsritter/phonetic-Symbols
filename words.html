@@ -278,6 +278,46 @@
       margin-right: 3px;
     }
 
+    .translation-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+    }
+
+    .pronunciation-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85em;
+      transition: all 0.2s ease;
+      min-width: 70px;
+      height: 28px;
+    }
+
+    .pronunciation-btn:hover:not(:disabled) {
+      background: #218838;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+    }
+
+    .pronunciation-btn:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .pronunciation-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
     .loading-indicator {
       position: fixed;
       top: 10px;
