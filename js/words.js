@@ -5,8 +5,14 @@ class WordManager {
     this.filteredWords = [];
     this.currentScene = 'all';
     this.searchTerm = '';
+    this.hiddenColumns = {
+      word: false,
+      phonetic: false,
+      meaning: false
+    };
     this.loadInitialWords();
     this.setupEventListeners();
+    this.setupTrainingControls();
   }
 
   // 加载初始单词数据，从JSON文件加载
@@ -90,16 +96,16 @@ class WordManager {
     const googleTranslateUrl = `https://translate.google.com/?sl=en&tl=zh&text=${encodeURIComponent(wordData.word)}&op=translate`;
 
     row.innerHTML = `
-      <td>
+      <td class="word-column">
         <div class="word-text">${wordData.word}</div>
       </td>
-      <td>
+      <td class="phonetic-column">
         <div class="phonetic-display">${wordData.phonetic}</div>
         <div class="phonetic-symbols">
           ${phoneticSymbols}
         </div>
       </td>
-      <td>
+      <td class="meaning-column">
         <div class="meaning-text">${wordData.meaning}</div>
         <div class="translation-controls">
           <button class="pronunciation-btn" data-word="${wordData.word}" title="播放发音" onclick="this.disabled=true; wordManager.playGoogleTTS('${wordData.word}', this)">
@@ -293,6 +299,65 @@ class WordManager {
       button.disabled = false;
       console.error('浏览器不支持语音合成');
     }
+  }
+
+  // 设置训练控制面板
+  setupTrainingControls() {
+    const controlButtons = document.querySelectorAll('.control-button');
+    
+    controlButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const column = button.dataset.column;
+        this.toggleColumn(column, button);
+      });
+    });
+  }
+
+  // 切换列的显示/隐藏
+  toggleColumn(columnType, button) {
+    this.hiddenColumns[columnType] = !this.hiddenColumns[columnType];
+    const isHidden = this.hiddenColumns[columnType];
+    
+    // 更新按钮状态和文本
+    if (isHidden) {
+      button.classList.add('active');
+      switch(columnType) {
+        case 'word':
+          button.textContent = '显示单词';
+          break;
+        case 'phonetic':
+          button.textContent = '显示音标';
+          break;
+        case 'meaning':
+          button.textContent = '显示中文';
+          break;
+      }
+    } else {
+      button.classList.remove('active');
+      switch(columnType) {
+        case 'word':
+          button.textContent = '隐藏单词';
+          break;
+        case 'phonetic':
+          button.textContent = '隐藏音标';
+          break;
+        case 'meaning':
+          button.textContent = '隐藏中文';
+          break;
+      }
+    }
+    
+    // 应用CSS类来隐藏/显示列
+    const className = `${columnType}-column`;
+    const elements = document.querySelectorAll(`.${className}`);
+    
+    elements.forEach(element => {
+      if (isHidden) {
+        element.classList.add('column-hidden');
+      } else {
+        element.classList.remove('column-hidden');
+      }
+    });
   }
 }
 

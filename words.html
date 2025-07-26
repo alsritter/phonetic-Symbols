@@ -341,8 +341,89 @@
       50% { opacity: 0.5; }
     }
 
+    /* 固定控制面板样式 */
+    .training-controls {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      padding: 15px 10px;
+      z-index: 1000;
+      min-width: 120px;
+      border: 2px solid #667eea;
+    }
+
+    .training-controls h4 {
+      margin: 0 0 15px 0;
+      text-align: center;
+      color: #667eea;
+      font-size: 0.9em;
+      font-weight: 600;
+      border-bottom: 1px solid #e9ecef;
+      padding-bottom: 8px;
+    }
+
+    .control-button {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      margin: 8px 0;
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      color: #495057;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .control-button:hover {
+      background: #e9ecef;
+      border-color: #667eea;
+      color: #667eea;
+      transform: translateY(-1px);
+    }
+
+    .control-button.active {
+      background: #667eea;
+      border-color: #667eea;
+      color: white;
+    }
+
+    .control-button.active:hover {
+      background: #5a67d8;
+    }
+
+    /* 隐藏列的样式 */
+    .column-hidden {
+      display: none !important;
+    }
+
     /* 响应式设计 */
     @media (max-width: 768px) {
+      .training-controls {
+        position: static;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 10px;
+        width: calc(100% - 20px);
+        min-width: auto;
+      }
+
+      .training-controls h4 {
+        font-size: 1em;
+      }
+
+      .control-button {
+        font-size: 0.9em;
+        padding: 10px 12px;
+      }
       .nav-container {
         flex-direction: column;
         gap: 10px;
@@ -390,6 +471,14 @@
 <body>
   <div class="loading-indicator" id="loadingIndicator">正在加载音频...</div>
 
+  <!-- 训练控制面板 -->
+  <div class="training-controls">
+    <h4>训练模式</h4>
+    <button class="control-button" id="toggleWord" data-column="word">隐藏单词</button>
+    <button class="control-button" id="togglePhonetic" data-column="phonetic">隐藏音标</button>
+    <button class="control-button" id="toggleMeaning" data-column="meaning">隐藏中文</button>
+  </div>
+
   <div class="header">
     <h1>KK音标学习系统</h1>
     <p>掌握发音，从音标开始</p>
@@ -429,9 +518,9 @@
         <table>
           <thead>
             <tr>
-              <th>单词</th>
-              <th>音标</th>
-              <th>中文意思</th>
+              <th class="word-column">单词</th>
+              <th class="phonetic-column">音标</th>
+              <th class="meaning-column">中文意思</th>
               <th>分类</th>
             </tr>
           </thead>
