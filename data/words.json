@@ -68,7 +68,7 @@
     },
     {
       "word": "make",
-      "phonetic": "[meɪk]",
+      "phonetic": "[mek]",
       "scene": "basic",
       "meaning": "制作"
     },
@@ -80,7 +80,7 @@
     },
     {
       "word": "home",
-      "phonetic": "[hoʊm]",
+      "phonetic": "[hom]",
       "scene": "daily",
       "meaning": "家"
     },
@@ -116,13 +116,13 @@
     },
     {
       "word": "water",
-      "phonetic": "[ˈwɔtər]",
+      "phonetic": "[ˈwɔtɚ]",
       "scene": "daily",
       "meaning": "水"
     },
     {
       "word": "phone",
-      "phonetic": "[foʊn]",
+      "phonetic": "[fon]",
       "scene": "daily",
       "meaning": "电话"
     },
@@ -140,7 +140,7 @@
     },
     {
       "word": "table",
-      "phonetic": "[ˈteɪbəl]",
+      "phonetic": "[ˈtebəl]",
       "scene": "daily",
       "meaning": "桌子"
     },
@@ -194,7 +194,7 @@
     },
     {
       "word": "sugar",
-      "phonetic": "[ˈʃʊgər]",
+      "phonetic": "[ˈʃʊgɚ]",
       "scene": "food",
       "meaning": "糖"
     },
@@ -218,7 +218,7 @@
     },
     {
       "word": "computer",
-      "phonetic": "[kəmˈpjutər]",
+      "phonetic": "[kəmˈpjutɚ]",
       "scene": "computer",
       "meaning": "计算机"
     },
@@ -236,7 +236,7 @@
     },
     {
       "word": "program",
-      "phonetic": "[ˈproʊgræm]",
+      "phonetic": "[ˈprogræm]",
       "scene": "computer",
       "meaning": "程序"
     },
@@ -248,13 +248,13 @@
     },
     {
       "word": "internet",
-      "phonetic": "[ˈɪntərˌnɛt]",
+      "phonetic": "[ˈɪntɚnɛt]",
       "scene": "computer",
       "meaning": "互联网"
     },
     {
       "word": "keyboard",
-      "phonetic": "[ˈkiˌbɔrd]",
+      "phonetic": "[ˈkibɔrd]",
       "scene": "computer",
       "meaning": "键盘"
     },
@@ -272,25 +272,25 @@
     },
     {
       "word": "download",
-      "phonetic": "[ˈdaʊnˌloʊd]",
+      "phonetic": "[ˈdaʊnlod]",
       "scene": "computer",
       "meaning": "下载"
     },
     {
       "word": "upload",
-      "phonetic": "[ˈʌpˌloʊd]",
+      "phonetic": "[ˈʌplod]",
       "scene": "computer",
       "meaning": "上传"
     },
     {
       "word": "database",
-      "phonetic": "[ˈdeɪtəˌbeɪs]",
+      "phonetic": "[ˈdetəbes]",
       "scene": "computer",
       "meaning": "数据库"
     },
     {
       "word": "clothes",
-      "phonetic": "[kloʊz]",
+      "phonetic": "[kloz]",
       "scene": "clothing",
       "meaning": "衣服"
     },
@@ -368,13 +368,13 @@
     },
     {
       "word": "football",
-      "phonetic": "[ˈfʊtˌbɔl]",
+      "phonetic": "[ˈfʊtbɔl]",
       "scene": "sports",
       "meaning": "足球"
     },
     {
       "word": "basketball",
-      "phonetic": "[ˈbæskətˌbɔl]",
+      "phonetic": "[ˈbæskətbɔl]",
       "scene": "sports",
       "meaning": "篮球"
     },
@@ -404,7 +404,7 @@
     },
     {
       "word": "exercise",
-      "phonetic": "[ˈɛksərˌsaɪz]",
+      "phonetic": "[ˈɛksɚsaɪz]",
       "scene": "sports",
       "meaning": "锻炼"
     },
@@ -422,7 +422,7 @@
     },
     {
       "word": "game",
-      "phonetic": "[geɪm]",
+      "phonetic": "[gem]",
       "scene": "sports",
       "meaning": "游戏/比赛"
     },
@@ -458,25 +458,25 @@
     },
     {
       "word": "train",
-      "phonetic": "[treɪn]",
+      "phonetic": "[tren]",
       "scene": "travel",
       "meaning": "火车"
     },
     {
       "word": "plane",
-      "phonetic": "[pleɪn]",
+      "phonetic": "[plen]",
       "scene": "travel",
       "meaning": "飞机"
     },
     {
       "word": "airport",
-      "phonetic": "[ˈɛrˌpɔrt]",
+      "phonetic": "[ˈɛrpɔrt]",
       "scene": "travel",
       "meaning": "机场"
     },
     {
       "word": "hotel",
-      "phonetic": "[hoʊˈtɛl]",
+      "phonetic": "[hoˈtɛl]",
       "scene": "travel",
       "meaning": "酒店"
     },
@@ -494,13 +494,13 @@
     },
     {
       "word": "road",
-      "phonetic": "[roʊd]",
+      "phonetic": "[rod]",
       "scene": "travel",
       "meaning": "道路"
     },
     {
       "word": "station",
-      "phonetic": "[ˈsteɪʃən]",
+      "phonetic": "[ˈsteʃən]",
       "scene": "travel",
       "meaning": "车站"
     },
@@ -530,7 +530,7 @@
     },
     {
       "word": "manager",
-      "phonetic": "[ˈmænədʒər]",
+      "phonetic": "[ˈmænədʒɚ]",
       "scene": "business",
       "meaning": "经理"
     },
@@ -548,25 +548,25 @@
     },
     {
       "word": "presentation",
-      "phonetic": "[ˌprɛzənˈteɪʃən]",
+      "phonetic": "[prɛzənˈteʃən]",
       "scene": "business",
       "meaning": "演示"
     },
     {
       "word": "contract",
-      "phonetic": "[ˈkɒntrækt]",
+      "phonetic": "[ˈkɑntrækt]",
       "scene": "business",
       "meaning": "合同"
     },
     {
       "word": "customer",
-      "phonetic": "[ˈkʌstəmər]",
+      "phonetic": "[ˈkʌstəmɚ]",
       "scene": "business",
       "meaning": "客户"
     },
     {
       "word": "email",
-      "phonetic": "[ˈiˌmeɪl]",
+      "phonetic": "[ˈimel]",
       "scene": "business",
       "meaning": "电子邮件"
     },
@@ -578,5 +578,3 @@
     }
   ]
 }
-
-   

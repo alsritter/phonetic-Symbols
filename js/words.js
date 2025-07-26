@@ -5,7 +5,7 @@ class WordManager {
     this.filteredWords = [];
     this.currentScene = 'all';
     this.searchTerm = '';
-    this.loadInitialWords(); // 异步加载数据
+    this.loadInitialWords();
     this.setupEventListeners();
   }
 
@@ -16,10 +16,9 @@ class WordManager {
       const data = await response.json();
       this.words = data.words;
       this.filteredWords = [...this.words];
-      this.renderWords(); // 加载完成后重新渲染
+      this.renderWords();
     } catch (error) {
       console.error('加载单词数据失败:', error);
-      // 如果加载失败，使用空数组
       this.words = [];
       this.filteredWords = [];
     }
@@ -27,13 +26,10 @@ class WordManager {
 
   // 设置事件监听器
   setupEventListeners() {
-    // 分类切换事件
     const categoryItems = document.querySelectorAll('.category-item');
     categoryItems.forEach(item => {
       item.addEventListener('click', () => {
-        // 移除所有active类
         categoryItems.forEach(i => i.classList.remove('active'));
-        // 添加到当前点击的项
         item.classList.add('active');
         
         this.currentScene = item.dataset.scene;
@@ -41,7 +37,6 @@ class WordManager {
       });
     });
 
-    // 搜索输入事件
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
@@ -55,12 +50,10 @@ class WordManager {
   applyFilter() {
     let filtered = [...this.words];
 
-    // 应用场景筛选
     if (this.currentScene !== 'all') {
       filtered = filtered.filter(word => word.scene === this.currentScene);
     }
 
-    // 应用搜索筛选
     if (this.searchTerm) {
       filtered = filtered.filter(word => 
         word.word.toLowerCase().includes(this.searchTerm) ||
@@ -85,7 +78,6 @@ class WordManager {
       wordsTableBody.appendChild(row);
     });
 
-    // 设置音标符号点击事件
     this.setupPhoneticSymbolEvents();
   }
 
@@ -93,13 +85,8 @@ class WordManager {
   createWordRow(wordData) {
     const row = document.createElement('tr');
     
-    // 解析音标为可点击的符号
     const phoneticSymbols = this.createPhoneticSymbols(wordData.phonetic);
-    
-    // 获取场景中文名
     const sceneName = this.getSceneName(wordData.scene);
-
-    // 创建谷歌翻译链接
     const googleTranslateUrl = `https://translate.google.com/?sl=en&tl=zh&text=${encodeURIComponent(wordData.word)}&op=translate`;
 
     row.innerHTML = `
@@ -172,9 +159,8 @@ class WordManager {
     return sceneNames[scene] || '其他';
   }
 
-  // 创建可点击的音标符号
+  // 创建可点击的音标符号 - 优化KK音标识别
   createPhoneticSymbols(phonetic) {
-    // 移除方括号和重音符号进行分析
     const cleanPhonetic = phonetic.replace(/[\[\]ˈˌ]/g, '');
     const sequence = audioPlayer.parsePhoneticSequence(cleanPhonetic);
     
@@ -183,18 +169,30 @@ class WordManager {
       const audioSrc = audioPlayer.phoneticAudioMap[symbol];
       
       if (audioSrc) {
-        return `<span class="phonetic-symbol ${type}" data-src="${audioSrc}">${symbol}</span>`;
+        return `<span class="phonetic-symbol ${type}" data-src="${audioSrc}" title="点击听发音: [${symbol}]">${symbol}</span>`;
       }
-      return `<span class="phonetic-symbol unknown">${symbol}</span>`;
+      return `<span class="phonetic-symbol unknown" title="暂无音频: [${symbol}]">${symbol}</span>`;
     }).join('');
   }
 
-  // 判断音标符号类型（元音或辅音）
+  // 判断KK音标符号类型
   getSymbolType(symbol) {
-    // 元音（包括双元音）
-    const vowels = ['i', 'ɪ', 'e', 'ɛ', 'æ', 'ə', 'ʌ', 'ɑ', 'ɔ', 'o', 'ʊ', 'u', 'ɚ', 'ɝ', 'aɪ', 'aʊ', 'ɔɪ', 'eɪ', 'oʊ'];
-    // 辅音
-    const consonants = ['p', 'b', 't', 'd', 'k', 'g', 'f', 'v', 's', 'z', 'θ', 'ð', 'ʃ', 'ʒ', 'tʃ', 'dʒ', 'l', 'r', 'm', 'n', 'ŋ', 'j', 'w', 'h'];
+    // KK音标元音（包括双元音和r化音）
+    const vowels = [
+      'i', 'ɪ', 'e', 'ɛ', 'æ', 'ə', 'ʌ', 'ɑ', 'ɔ', 'o', 'ʊ', 'u', 
+      'ɚ', 'ɝ',  // r化音
+      'aɪ', 'aʊ', 'ɔɪ'  // 双元音
+    ];
+    
+    // KK音标辅音
+    const consonants = [
+      'p', 'b', 't', 'd', 'k', 'g',  // 爆破音
+      'f', 'v', 's', 'z', 'θ', 'ð', 'ʃ', 'ʒ', 'h',  // 摩擦音
+      'tʃ', 'dʒ',  // 塞擦音
+      'l', 'r',    // 流音
+      'm', 'n', 'ŋ',  // 鼻音
+      'j', 'w'     // 半元音
+    ];
     
     if (vowels.includes(symbol)) {
       return 'vowel';
@@ -220,16 +218,12 @@ class WordManager {
     });
   }
 
-  // 播放谷歌 TTS 发音
+  // TTS相关方法保持不变...
   playGoogleTTS(word, button) {
     try {
-      // 创建音频URL，使用谷歌翻译的TTS服务
       const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=${encodeURIComponent(word)}`;
-      
-      // 创建音频元素
       const audio = new Audio(ttsUrl);
       
-      // 设置音频事件
       audio.onloadstart = () => {
         button.innerHTML = '<span style="font-size: 12px;">播放中...</span>';
       };
@@ -250,16 +244,11 @@ class WordManager {
           </svg>
         `;
         button.disabled = false;
-        console.error('播放失败，可能是网络问题或服务不可用');
-        
-        // 如果谷歌TTS失败，尝试使用浏览器内置的语音合成
         this.playBrowserTTS(word, button);
       };
       
-      // 播放音频
       audio.play().catch(err => {
         console.error('播放失败:', err);
-        // 如果直接播放失败，尝试使用浏览器内置的语音合成
         this.playBrowserTTS(word, button);
       });
       
@@ -270,7 +259,6 @@ class WordManager {
     }
   }
 
-  // 使用浏览器内置的语音合成作为备选方案
   playBrowserTTS(word, button) {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(word);
@@ -298,7 +286,6 @@ class WordManager {
           </svg>
         `;
         button.disabled = false;
-        console.error('语音播放失败');
       };
       
       speechSynthesis.speak(utterance);
@@ -309,12 +296,9 @@ class WordManager {
   }
 }
 
-// 全局单词管理器实例
 let wordManager;
 
-// 页面加载完成后初始化单词管理器
 document.addEventListener('DOMContentLoaded', function() {
-  // 只在单词页面初始化
   if (document.getElementById('wordsTableBody')) {
     wordManager = new WordManager();
   }
