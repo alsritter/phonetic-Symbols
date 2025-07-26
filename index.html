@@ -1,260 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PhoneticSymbols</title>
-    <style>
-      .phonetic {
-        max-width: 800px;
-        margin: 100px auto 0;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 静态资源缓存控制 -->
+  <meta http-equiv="Cache-Control" content="max-age=31536000, public" />
+  <meta http-equiv="Expires" content="Thu, 31 Dec 2024 23:59:59 GMT" />
+  <link rel="preload" href="./asset/image/playIcon.gif" as="image" />
+  <title>PhoneticSymbols</title>
+  <style>
+    .phonetic {
+      max-width: 800px;
+      margin: 100px auto 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f9f9f9;
+      font-weight: bold;
+      color: #333;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .kk-table .kk {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .kk-table .kk::before {
+      content: "";
+      background: url("./asset/image/playIcon.gif") -2px -2px no-repeat;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      display: block;
+      margin-right: 5px;
+    }
+
+    .kk-table .stop::before {
+      background-position: -2px -32px;
+    }
+
+    /* 加载指示器样式 */
+    .loading-indicator {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .loading-indicator.show {
+      opacity: 1;
+    }
+
+    .kk {
+      position: relative;
+    }
+
+    .kk.playing::after {
+      content: "♪";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #007bff;
+      font-size: 12px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
       }
 
-      th,
-      td {
-        padding: 12px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
+      50% {
+        opacity: 0.5;
       }
-      th {
-        background-color: #f9f9f9;
-        font-weight: bold;
-        color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading-indicator" id="loadingIndicator">正在预加载音频...</div>
+  <div class="phonetic">
+    <table border="1" cellpadding="1" cellspacing="1" class="kk-table">
+      <thead>
+        <tr>
+          <th colspan="7">KK 音标表</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">元音</td>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk01.mp3">[i]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk02.mp3">[ɪ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk03.mp3">[e]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk04.mp3">[ɛ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk05.mp3">[&aelig;]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="1">
+            <span class="kk" data-src="./asset/audio/kk07.mp3">[o]</span>
+          </td>
+          <td rowspan="1">
+            <span class="kk" data-src="./asset/audio/kk08.mp3">[ɔ]</span>
+          </td>
+          <td rowspan="1">
+            <span class="kk" data-src="./asset/audio/kk09.mp3">[u]</span>
+          </td>
+          <td rowspan="1">
+            <span class="kk" data-src="./asset/audio/kk10.mp3">[ʊ]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk06.mp3">[ɑ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk11.mp3">[ʌ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk12.mp3">[ə]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk13.mp3">[ɚ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk14.mp3">[ɝ]</span>
+          </td>
+        </tr>
+        <tr>
+          <td>双元音</td>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk15.mp3">[aɪ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk16.mp3">[aʊ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk17.mp3">[ɔɪ]</span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="7">辅音</td>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk18.mp3">[p]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk19.mp3">[b]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk22.mp3">[t]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk23.mp3">[d]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk24.mp3">[k]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk25.mp3">[g]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk26.mp3">[f]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk27.mp3">[v]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk28.mp3">[s]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk29.mp3">[z]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="2">
+            <span class="kk" data-src="./asset/audio/kk30.mp3">[&theta;]</span>
+          </td>
+          <td rowspan="2">
+            <span class="kk" data-src="./asset/audio/kk31.mp3">[&eth;]</span>
+          </td>
+          <td rowspan="2">
+            <span class="kk" data-src="./asset/audio/kk32.mp3">[ʃ]</span>
+          </td>
+          <td rowspan="2">
+            <span class="kk" data-src="./asset/audio/kk33.mp3">[ʒ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk34.mp3">[tʃ]</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk35.mp3">[tʃ]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk36.mp3">[dʒ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk38.mp3">[l]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk40.mp3">[r]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk42.mp3">[m]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk44.mp3">[n]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk37.mp3">[dʒ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk39.mp3">[l]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk41.mp3">[r]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk43.mp3">[m]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk45.mp3">[n]</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <span class="kk" data-src="./asset/audio/kk46.mp3">[ŋ]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk47.mp3">[j]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk48.mp3">[w]</span>
+          </td>
+          <td>
+            <span class="kk" data-src="./asset/audio/kk49.mp3">[h]</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // 音频缓存对象
+    const audioCache = new Map();
+    let currentAudio = null;
+    let currentPlayingElement = null;
+    let loadedCount = 0;
+    const totalAudioFiles = 49;
+
+    // 预加载音频文件
+    function preloadAudio() {
+      const loadingIndicator = document.getElementById('loadingIndicator');
+      loadingIndicator.classList.add('show');
+
+      const audioSources = [
+        './asset/audio/kk01.mp3', './asset/audio/kk02.mp3', './asset/audio/kk03.mp3',
+        './asset/audio/kk04.mp3', './asset/audio/kk05.mp3', './asset/audio/kk06.mp3',
+        './asset/audio/kk07.mp3', './asset/audio/kk08.mp3', './asset/audio/kk09.mp3',
+        './asset/audio/kk10.mp3', './asset/audio/kk11.mp3', './asset/audio/kk12.mp3',
+        './asset/audio/kk13.mp3', './asset/audio/kk14.mp3', './asset/audio/kk15.mp3',
+        './asset/audio/kk16.mp3', './asset/audio/kk17.mp3', './asset/audio/kk18.mp3',
+        './asset/audio/kk19.mp3', './asset/audio/kk20.mp3', './asset/audio/kk21.mp3',
+        './asset/audio/kk22.mp3', './asset/audio/kk23.mp3', './asset/audio/kk24.mp3',
+        './asset/audio/kk25.mp3', './asset/audio/kk26.mp3', './asset/audio/kk27.mp3',
+        './asset/audio/kk28.mp3', './asset/audio/kk29.mp3', './asset/audio/kk30.mp3',
+        './asset/audio/kk31.mp3', './asset/audio/kk32.mp3', './asset/audio/kk33.mp3',
+        './asset/audio/kk34.mp3', './asset/audio/kk35.mp3', './asset/audio/kk36.mp3',
+        './asset/audio/kk37.mp3', './asset/audio/kk38.mp3', './asset/audio/kk39.mp3',
+        './asset/audio/kk40.mp3', './asset/audio/kk41.mp3', './asset/audio/kk42.mp3',
+        './asset/audio/kk43.mp3', './asset/audio/kk44.mp3', './asset/audio/kk45.mp3',
+        './asset/audio/kk46.mp3', './asset/audio/kk47.mp3', './asset/audio/kk48.mp3',
+        './asset/audio/kk49.mp3'
+      ];
+
+      audioSources.forEach((src, index) => {
+        const audio = new Audio();
+        audio.preload = 'auto';
+        audio.src = src;
+
+        audio.addEventListener('canplaythrough', () => {
+          loadedCount++;
+          loadingIndicator.textContent = `正在预加载音频... (${loadedCount}/${totalAudioFiles})`;
+
+          if (loadedCount === totalAudioFiles) {
+            setTimeout(() => {
+              loadingIndicator.classList.remove('show');
+            }, 500);
+          }
+        });
+
+        audio.addEventListener('error', () => {
+          console.warn(`Failed to load audio: ${src}`);
+          loadedCount++;
+        });
+
+        audioCache.set(src, audio);
+      });
+    }
+
+    function playAudio() {
+      const kk = document.querySelectorAll(".kk");
+
+      for (let i = 0; i < kk.length; i++) {
+        kk[i].onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const audioSrc = e.target.dataset.src;
+
+          // 清除之前的播放状态
+          if (currentPlayingElement) {
+            currentPlayingElement.classList.remove('playing');
+          }
+
+          // 停止当前播放的音频
+          if (currentAudio && !currentAudio.paused) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+          }
+
+          // 从缓存中获取音频对象
+          let audio = audioCache.get(audioSrc);
+
+          if (!audio) {
+            // 如果缓存中没有，创建新的音频对象
+            audio = new Audio();
+            audio.src = audioSrc;
+            audio.preload = 'auto';
+            audioCache.set(audioSrc, audio);
+          }
+
+          currentAudio = audio;
+          currentPlayingElement = e.target;
+
+          // 添加播放状态样式
+          e.target.classList.add('playing');
+
+          // 重置播放位置并播放
+          audio.currentTime = 0;
+
+          // 监听播放结束事件
+          audio.addEventListener('ended', () => {
+            if (currentPlayingElement) {
+              currentPlayingElement.classList.remove('playing');
+            }
+          }, { once: true });
+
+          // 使用 Promise 处理播放，避免阻塞
+          const playPromise = audio.play();
+
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.warn('Audio play failed:', error);
+              if (currentPlayingElement) {
+                currentPlayingElement.classList.remove('playing');
+              }
+            });
+          }
+        };
+      }
+    }
+
+    window.onload = () => {
+      // 注册 Service Worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
       }
 
-      tr:hover {
-        background-color: #f5f5f5;
-      }
-      .kk-table .kk {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-      }
-      .kk-table .kk::before {
-        content: "";
-        background: url("./asset/image/playIcon.gif") -2px -2px no-repeat;
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        display: block;
-        margin-right: 5px;
-      }
-      .kk-table .stop::before {
-        background-position: -2px -32px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="phonetic">
-      <audio>
-        <source src="" />
-        您的浏览器不支持 audio 元素。
-      </audio>
-      <table border="1" cellpadding="1" cellspacing="1" class="kk-table">
-        <thead>
-          <tr>
-            <th colspan="7">KK 音标表</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="3">元音</td>
-            <td colspan="2">
-              <span class="kk" data-src="./asset/audio/kk01.mp3">[i]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk02.mp3">[ɪ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk03.mp3">[e]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk04.mp3">[ɛ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk05.mp3"
-                >[&aelig;]</span
-              >
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" rowspan="1">
-              <span class="kk" data-src="./asset/audio/kk07.mp3">[o]</span>
-            </td>
-            <td rowspan="1">
-              <span class="kk" data-src="./asset/audio/kk08.mp3">[ɔ]</span>
-            </td>
-            <td rowspan="1">
-              <span class="kk" data-src="./asset/audio/kk09.mp3">[u]</span>
-            </td>
-            <td rowspan="1">
-              <span class="kk" data-src="./asset/audio/kk10.mp3">[ʊ]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <span class="kk" data-src="./asset/audio/kk06.mp3">[ɑ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk11.mp3">[ʌ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk12.mp3">[ə]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk13.mp3">[ɚ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk14.mp3">[ɝ]</span>
-            </td>
-          </tr>
-          <tr>
-            <td>双元音</td>
-            <td colspan="2">
-              <span class="kk" data-src="./asset/audio/kk15.mp3">[aɪ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk16.mp3">[aʊ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk17.mp3">[ɔɪ]</span>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="7">辅音</td>
-            <td colspan="2">
-              <span class="kk" data-src="./asset/audio/kk18.mp3">[p]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk19.mp3">[b]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk22.mp3">[t]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk23.mp3">[d]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk24.mp3">[k]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan='2"'>
-              <span class="kk" data-src="./asset/audio/kk25.mp3">[g]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk26.mp3">[f]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk27.mp3">[v]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk28.mp3">[s]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk29.mp3">[z]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan='2"' rowspan="2">
-              <span class="kk" data-src="./asset/audio/kk30.mp3"
-                >[&theta;]</span
-              >
-            </td>
-            <td rowspan="2">
-              <span class="kk" data-src="./asset/audio/kk31.mp3">[&eth;]</span>
-            </td>
-            <td rowspan="2">
-              <span class="kk" data-src="./asset/audio/kk32.mp3">[ʃ]</span>
-            </td>
-            <td rowspan="2">
-              <span class="kk" data-src="./asset/audio/kk33.mp3">[ʒ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk34.mp3">[tʃ]</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk35.mp3">[tʃ]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <span class="kk" data-src="./asset/audio/kk36.mp3">[dʒ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk38.mp3">[l]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk40.mp3">[r]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk42.mp3">[m]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk44.mp3">[n]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan='2"'>
-              <span class="kk" data-src="./asset/audio/kk37.mp3">[dʒ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk39.mp3">[l]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk41.mp3">[r]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk43.mp3">[m]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk45.mp3">[n]</span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan='2"'>
-              <span class="kk" data-src="./asset/audio/kk46.mp3">[ŋ]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk47.mp3">[j]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk48.mp3">[w]</span>
-            </td>
-            <td>
-              <span class="kk" data-src="./asset/audio/kk49.mp3">[h]</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <script>
-      function playAudio() {
-        const kk = document.querySelectorAll(".kk");
+      // 立即设置点击事件
+      playAudio();
 
-        for (let i = 0; i < kk.length; i++) {
-          kk[i].onclick = function (e) {
-            // e.target.className += " stop";
-            const audio = document.querySelector("audio");
-            audio.src = e.target.dataset.src;
-            audio.play();
-          };
-        }
-      }
+      // 延迟预加载，避免阻塞页面渲染
+      setTimeout(() => {
+        preloadAudio();
+      }, 100);
+    };
+  </script>
+</body>
 
-      window.onload = () => {
-        playAudio();
-      };
-    </script>
-  </body>
 </html>
