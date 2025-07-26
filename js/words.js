@@ -13,6 +13,16 @@ class WordManager {
     this.loadInitialWords();
     this.setupEventListeners();
     this.setupTrainingControls();
+    
+    // 确保在页面加载后重新设置音标事件，以利用audioPlayer的缓存
+    window.addEventListener('load', () => {
+      if (typeof audioPlayer !== 'undefined') {
+        // 延迟一点时间确保audioPlayer完全初始化
+        setTimeout(() => {
+          this.setupPhoneticSymbolEvents();
+        }, 200);
+      }
+    });
   }
 
   // 加载初始单词数据，从JSON文件加载
@@ -84,6 +94,7 @@ class WordManager {
       wordsTableBody.appendChild(row);
     });
 
+    // 渲染完成后设置音标符号事件，利用audioPlayer的缓存
     this.setupPhoneticSymbolEvents();
   }
 
@@ -100,7 +111,9 @@ class WordManager {
         <div class="word-text">${wordData.word}</div>
       </td>
       <td class="phonetic-column">
-        <div class="phonetic-display">${wordData.phonetic}</div>
+        <div class="phonetic-display">
+          <span style="cursor: pointer; color: #667eea;" onclick="wordManager.playPhoneticSequence('${wordData.phonetic}', this)" title="点击播放完整音标">${wordData.phonetic}</span>
+        </div>
         <div class="phonetic-symbols">
           ${phoneticSymbols}
         </div>
@@ -165,7 +178,7 @@ class WordManager {
     return sceneNames[scene] || '其他';
   }
 
-  // 创建可点击的音标符号 - 优化KK音标识别
+  // 创建可点击的音标符号 - 优化KK音标识别，充分利用缓存
   createPhoneticSymbols(phonetic) {
     const cleanPhonetic = phonetic.replace(/[\[\]ˈˌ]/g, '');
     const sequence = audioPlayer.parsePhoneticSequence(cleanPhonetic);
@@ -175,9 +188,13 @@ class WordManager {
       const audioSrc = audioPlayer.phoneticAudioMap[symbol];
       
       if (audioSrc) {
-        return `<span class="phonetic-symbol ${type}" data-src="${audioSrc}" title="点击听发音: [${symbol}]">${symbol}</span>`;
+        // 使用 kk 类名以便与 audioPlayer 的事件处理保持一致
+        return `<span class="phonetic-symbol ${type} kk" data-src="${audioSrc}" data-symbol="${symbol}" title="点击听发音: [${symbol}]">${symbol}</span>`;
+      } else {
+        // 对于未找到的音标，记录调试信息
+        console.warn(`未找到音标 "${symbol}" 的音频文件 (来源: ${phonetic})`);
+        return `<span class="phonetic-symbol unknown" data-symbol="${symbol}" title="暂无音频: [${symbol}]" style="opacity: 0.6;">${symbol}</span>`;
       }
-      return `<span class="phonetic-symbol unknown" title="暂无音频: [${symbol}]">${symbol}</span>`;
     }).join('');
   }
 
@@ -208,20 +225,35 @@ class WordManager {
     return 'unknown';
   }
 
-  // 设置音标符号点击事件
+  // 设置音标符号点击事件 - 优化，移除重复的事件监听，直接使用audioPlayer的缓存
   setupPhoneticSymbolEvents() {
-    const phoneticSymbols = document.querySelectorAll('.phonetic-symbol');
-    phoneticSymbols.forEach(symbol => {
-      symbol.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    // 由于我们已经给音标符号添加了 'kk' 类名，
+    // audioPlayer.setupPhoneticAudio() 会自动处理这些元素的点击事件
+    // 这样可以充分利用audioPlayer的音频缓存和统一的播放逻辑
+    
+    // 确保audioPlayer已经设置了事件监听
+    if (typeof audioPlayer !== 'undefined' && audioPlayer.setupPhoneticAudio) {
+      audioPlayer.setupPhoneticAudio();
+    }
+  }
 
-        const audioSrc = e.target.dataset.src;
-        if (audioSrc) {
-          audioPlayer.playPhoneticAudio(audioSrc, e.target);
-        }
-      });
-    });
+  // 播放完整单词的音标序列
+  async playPhoneticSequence(phonetic, element) {
+    if (typeof audioPlayer !== 'undefined' && audioPlayer.playPhoneticBreakdown) {
+      try {
+        element.style.color = '#28a745';
+        element.innerHTML = `♪ ${phonetic}`;
+        
+        await audioPlayer.playPhoneticBreakdown(phonetic, element);
+        
+        element.style.color = '#667eea';
+        element.innerHTML = phonetic;
+      } catch (error) {
+        console.error('播放音标序列失败:', error);
+        element.style.color = '#667eea';
+        element.innerHTML = phonetic;
+      }
+    }
   }
 
   // TTS相关方法保持不变...

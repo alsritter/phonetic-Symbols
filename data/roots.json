@@ -1,0 +1,2422 @@
+{
+  "roots": [
+    {
+      "root": "bio",
+      "type": "prefix",
+      "meaning": "生命，生物",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "biology",
+          "phonetic": "[baɪˈɑlədʒi]",
+          "meaning": "生物学",
+          "structure": "bio(生命) + logy(学科)"
+        },
+        {
+          "word": "biography",
+          "phonetic": "[baɪˈɑgrəfi]",
+          "meaning": "传记",
+          "structure": "bio(生命) + graphy(写作)"
+        },
+        {
+          "word": "biodegradable",
+          "phonetic": "[ˌbaɪoʊdɪˈgreɪdəbəl]",
+          "meaning": "可生物降解的",
+          "structure": "bio(生物) + de(去除) + grad(步骤) + able(能够)"
+        }
+      ]
+    },
+    {
+      "root": "auto",
+      "type": "prefix",
+      "meaning": "自动，自己",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "automatic",
+          "phonetic": "[ˌɔtəˈmætɪk]",
+          "meaning": "自动的",
+          "structure": "auto(自己) + matic(有...性质的)"
+        },
+        {
+          "word": "automobile",
+          "phonetic": "[ˈɔtəmoʊˌbil]",
+          "meaning": "汽车",
+          "structure": "auto(自己) + mobile(移动的)"
+        },
+        {
+          "word": "autobiography",
+          "phonetic": "[ˌɔtəbaɪˈɑgrəfi]",
+          "meaning": "自传",
+          "structure": "auto(自己) + bio(生命) + graphy(写作)"
+        }
+      ]
+    },
+    {
+      "root": "tele",
+      "type": "prefix",
+      "meaning": "远距离",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "telephone",
+          "phonetic": "[ˈtɛləˌfoʊn]",
+          "meaning": "电话",
+          "structure": "tele(远距离) + phone(声音)"
+        },
+        {
+          "word": "television",
+          "phonetic": "[ˈtɛləˌvɪʒən]",
+          "meaning": "电视",
+          "structure": "tele(远距离) + vision(看见)"
+        },
+        {
+          "word": "telescope",
+          "phonetic": "[ˈtɛləˌskoʊp]",
+          "meaning": "望远镜",
+          "structure": "tele(远距离) + scope(看)"
+        }
+      ]
+    },
+    {
+      "root": "micro",
+      "type": "prefix",
+      "meaning": "微小",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "microscope",
+          "phonetic": "[ˈmaɪkrəˌskoʊp]",
+          "meaning": "显微镜",
+          "structure": "micro(微小) + scope(看)"
+        },
+        {
+          "word": "microphone",
+          "phonetic": "[ˈmaɪkrəˌfoʊn]",
+          "meaning": "麦克风",
+          "structure": "micro(微小) + phone(声音)"
+        },
+        {
+          "word": "microwave",
+          "phonetic": "[ˈmaɪkroʊˌweɪv]",
+          "meaning": "微波",
+          "structure": "micro(微小) + wave(波)"
+        }
+      ]
+    },
+    {
+      "root": "multi",
+      "type": "prefix",
+      "meaning": "多，复数",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "multiply",
+          "phonetic": "[ˈmʌltəˌplaɪ]",
+          "meaning": "乘法，繁殖",
+          "structure": "multi(多) + ply(折叠)"
+        },
+        {
+          "word": "multimedia",
+          "phonetic": "[ˌmʌltiˈmidiə]",
+          "meaning": "多媒体",
+          "structure": "multi(多) + media(媒体)"
+        },
+        {
+          "word": "multicultural",
+          "phonetic": "[ˌmʌltiˈkʌltʃərəl]",
+          "meaning": "多文化的",
+          "structure": "multi(多) + cultural(文化的)"
+        }
+      ]
+    },
+    {
+      "root": "uni",
+      "type": "prefix",
+      "meaning": "一，单一",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "university",
+          "phonetic": "[ˌjunəˈvɜrsəti]",
+          "meaning": "大学",
+          "structure": "uni(一) + vers(转向) + ity(名词后缀)"
+        },
+        {
+          "word": "uniform",
+          "phonetic": "[ˈjunəˌfɔrm]",
+          "meaning": "制服，统一的",
+          "structure": "uni(一) + form(形式)"
+        },
+        {
+          "word": "unique",
+          "phonetic": "[juˈnik]",
+          "meaning": "独特的",
+          "structure": "uni(一) + que(形容词后缀)"
+        }
+      ]
+    },
+    {
+      "root": "inter",
+      "type": "prefix",
+      "meaning": "之间，相互",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "international",
+          "phonetic": "[ˌɪntərˈnæʃənəl]",
+          "meaning": "国际的",
+          "structure": "inter(之间) + national(国家的)"
+        },
+        {
+          "word": "internet",
+          "phonetic": "[ˈɪntərˌnɛt]",
+          "meaning": "互联网",
+          "structure": "inter(相互) + net(网络)"
+        },
+        {
+          "word": "interview",
+          "phonetic": "[ˈɪntərˌvju]",
+          "meaning": "面试，采访",
+          "structure": "inter(相互) + view(看)"
+        }
+      ]
+    },
+    {
+      "root": "sub",
+      "type": "prefix",
+      "meaning": "在下面，次要",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "subway",
+          "phonetic": "[ˈsʌbˌweɪ]",
+          "meaning": "地铁",
+          "structure": "sub(在下面) + way(道路)"
+        },
+        {
+          "word": "submarine",
+          "phonetic": "[ˈsʌbməˌrin]",
+          "meaning": "潜水艇",
+          "structure": "sub(在下面) + marine(海洋的)"
+        },
+        {
+          "word": "subtract",
+          "phonetic": "[səbˈtrækt]",
+          "meaning": "减法",
+          "structure": "sub(向下) + tract(拉)"
+        }
+      ]
+    },
+    {
+      "root": "super",
+      "type": "prefix",
+      "meaning": "超过，在上面",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "superman",
+          "phonetic": "[ˈsupərˌmæn]",
+          "meaning": "超人",
+          "structure": "super(超过) + man(人)"
+        },
+        {
+          "word": "supermarket",
+          "phonetic": "[ˈsupərˌmɑrkɪt]",
+          "meaning": "超市",
+          "structure": "super(超过) + market(市场)"
+        },
+        {
+          "word": "superior",
+          "phonetic": "[səˈpɪriər]",
+          "meaning": "优越的",
+          "structure": "super(在上面) + ior(比较级后缀)"
+        }
+      ]
+    },
+    {
+      "root": "re",
+      "type": "prefix",
+      "meaning": "重新，回到",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "return",
+          "phonetic": "[rɪˈtɜrn]",
+          "meaning": "返回",
+          "structure": "re(回到) + turn(转)"
+        },
+        {
+          "word": "repeat",
+          "phonetic": "[rɪˈpit]",
+          "meaning": "重复",
+          "structure": "re(重新) + peat(寻求)"
+        },
+        {
+          "word": "review",
+          "phonetic": "[rɪˈvju]",
+          "meaning": "复习，回顾",
+          "structure": "re(重新) + view(看)"
+        }
+      ]
+    },
+    {
+      "root": "tion",
+      "type": "suffix",
+      "meaning": "行为，状态",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "education",
+          "phonetic": "[ˌɛdʒəˈkeɪʃən]",
+          "meaning": "教育",
+          "structure": "educat(教育) + ion(行为)"
+        },
+        {
+          "word": "information",
+          "phonetic": "[ˌɪnfərˈmeɪʃən]",
+          "meaning": "信息",
+          "structure": "inform(告知) + ation(行为)"
+        },
+        {
+          "word": "creation",
+          "phonetic": "[kriˈeɪʃən]",
+          "meaning": "创造",
+          "structure": "creat(创造) + ion(行为)"
+        }
+      ]
+    },
+    {
+      "root": "able",
+      "type": "suffix",
+      "meaning": "能够，可以",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "readable",
+          "phonetic": "[ˈridəbəl]",
+          "meaning": "可读的",
+          "structure": "read(读) + able(能够)"
+        },
+        {
+          "word": "comfortable",
+          "phonetic": "[ˈkʌmftəbəl]",
+          "meaning": "舒适的",
+          "structure": "comfort(舒适) + able(能够)"
+        },
+        {
+          "word": "valuable",
+          "phonetic": "[ˈvæljəbəl]",
+          "meaning": "有价值的",
+          "structure": "valu(价值) + able(能够)"
+        }
+      ]
+    },
+    {
+      "root": "ful",
+      "type": "suffix",
+      "meaning": "充满，有特性",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "beautiful",
+          "phonetic": "[ˈbjutəfəl]",
+          "meaning": "美丽的",
+          "structure": "beauty(美丽) + ful(充满)"
+        },
+        {
+          "word": "helpful",
+          "phonetic": "[ˈhɛlpfəl]",
+          "meaning": "有帮助的",
+          "structure": "help(帮助) + ful(充满)"
+        },
+        {
+          "word": "successful",
+          "phonetic": "[səkˈsɛsfəl]",
+          "meaning": "成功的",
+          "structure": "success(成功) + ful(充满)"
+        }
+      ]
+    },
+    {
+      "root": "ness",
+      "type": "suffix",
+      "meaning": "状态，性质",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "happiness",
+          "phonetic": "[ˈhæpɪnəs]",
+          "meaning": "幸福",
+          "structure": "happy(快乐) + ness(状态)"
+        },
+        {
+          "word": "kindness",
+          "phonetic": "[ˈkaɪndnəs]",
+          "meaning": "善良",
+          "structure": "kind(善良) + ness(状态)"
+        },
+        {
+          "word": "darkness",
+          "phonetic": "[ˈdɑrknəs]",
+          "meaning": "黑暗",
+          "structure": "dark(黑暗) + ness(状态)"
+        }
+      ]
+    },
+    {
+      "root": "less",
+      "type": "suffix",
+      "meaning": "没有，缺乏",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "hopeless",
+          "phonetic": "[ˈhoʊpləs]",
+          "meaning": "绝望的",
+          "structure": "hope(希望) + less(没有)"
+        },
+        {
+          "word": "careless",
+          "phonetic": "[ˈkɛrləs]",
+          "meaning": "粗心的",
+          "structure": "care(关心) + less(没有)"
+        },
+        {
+          "word": "homeless",
+          "phonetic": "[ˈhoʊmləs]",
+          "meaning": "无家可归的",
+          "structure": "home(家) + less(没有)"
+        }
+      ]
+    },
+    {
+      "root": "graph",
+      "type": "root",
+      "meaning": "写，画",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "photograph",
+          "phonetic": "[ˈfoʊtəˌgræf]",
+          "meaning": "照片",
+          "structure": "photo(光) + graph(画)"
+        },
+        {
+          "word": "paragraph",
+          "phonetic": "[ˈpærəˌgræf]",
+          "meaning": "段落",
+          "structure": "para(旁边) + graph(写)"
+        },
+        {
+          "word": "autograph",
+          "phonetic": "[ˈɔtəˌgræf]",
+          "meaning": "亲笔签名",
+          "structure": "auto(自己) + graph(写)"
+        }
+      ]
+    },
+    {
+      "root": "phon",
+      "type": "root",
+      "meaning": "声音",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "telephone",
+          "phonetic": "[ˈtɛləˌfoʊn]",
+          "meaning": "电话",
+          "structure": "tele(远距离) + phon(声音)"
+        },
+        {
+          "word": "symphony",
+          "phonetic": "[ˈsɪmfəni]",
+          "meaning": "交响乐",
+          "structure": "sym(一起) + phon(声音) + y(名词后缀)"
+        },
+        {
+          "word": "phonetic",
+          "phonetic": "[fəˈnɛtɪk]",
+          "meaning": "语音的",
+          "structure": "phon(声音) + etic(形容词后缀)"
+        }
+      ]
+    },
+    {
+      "root": "scop",
+      "type": "root",
+      "meaning": "看",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "telescope",
+          "phonetic": "[ˈtɛləˌskoʊp]",
+          "meaning": "望远镜",
+          "structure": "tele(远距离) + scop(看)"
+        },
+        {
+          "word": "microscope",
+          "phonetic": "[ˈmaɪkrəˌskoʊp]",
+          "meaning": "显微镜",
+          "structure": "micro(微小) + scop(看)"
+        },
+        {
+          "word": "horoscope",
+          "phonetic": "[ˈhɔrəˌskoʊp]",
+          "meaning": "占星术",
+          "structure": "horo(时间) + scop(看)"
+        }
+      ]
+    },
+    {
+      "root": "log",
+      "type": "root",
+      "meaning": "说话，学科",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "biology",
+          "phonetic": "[baɪˈɑlədʒi]",
+          "meaning": "生物学",
+          "structure": "bio(生命) + log(学科) + y(名词后缀)"
+        },
+        {
+          "word": "psychology",
+          "phonetic": "[saɪˈkɑlədʒi]",
+          "meaning": "心理学",
+          "structure": "psycho(心理) + log(学科) + y(名词后缀)"
+        },
+        {
+          "word": "dialogue",
+          "phonetic": "[ˈdaɪəˌlɔg]",
+          "meaning": "对话",
+          "structure": "dia(通过) + log(说话) + ue(名词后缀)"
+        }
+      ]
+    },
+    {
+      "root": "port",
+      "type": "root",
+      "meaning": "携带，运输",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "transport",
+          "phonetic": "[ˈtrænspɔrt]",
+          "meaning": "运输",
+          "structure": "trans(穿过) + port(携带)"
+        },
+        {
+          "word": "export",
+          "phonetic": "[ˈɛkspɔrt]",
+          "meaning": "出口",
+          "structure": "ex(向外) + port(携带)"
+        },
+        {
+          "word": "import",
+          "phonetic": "[ˈɪmpɔrt]",
+          "meaning": "进口",
+          "structure": "im(向内) + port(携带)"
+        }
+      ]
+    },
+    {
+      "root": "struct",
+      "type": "root",
+      "meaning": "建造",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "construction",
+          "phonetic": "[kənˈstrʌkʃən]",
+          "meaning": "建设",
+          "structure": "con(一起) + struct(建造) + ion(行为)"
+        },
+        {
+          "word": "instruction",
+          "phonetic": "[ɪnˈstrʌkʃən]",
+          "meaning": "指导",
+          "structure": "in(进入) + struct(建造) + ion(行为)"
+        },
+        {
+          "word": "structure",
+          "phonetic": "[ˈstrʌktʃər]",
+          "meaning": "结构",
+          "structure": "struct(建造) + ure(名词后缀)"
+        }
+      ]
+    },
+    {
+      "root": "script",
+      "type": "root",
+      "meaning": "写",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "JavaScript",
+          "phonetic": "[ˈdʒɑvəˌskrɪpt]",
+          "meaning": "JavaScript编程语言",
+          "structure": "Java + script(脚本)"
+        },
+        {
+          "word": "description",
+          "phonetic": "[dɪˈskrɪpʃən]",
+          "meaning": "描述",
+          "structure": "de(向下) + script(写) + ion(名词)"
+        },
+        {
+          "word": "prescription",
+          "phonetic": "[prɪˈskrɪpʃən]",
+          "meaning": "处方",
+          "structure": "pre(预先) + script(写) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "vis",
+      "type": "root",
+      "meaning": "看",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "visible",
+          "phonetic": "[ˈvɪzəbəl]",
+          "meaning": "可见的",
+          "structure": "vis(看) + ible(能够)"
+        },
+        {
+          "word": "revision",
+          "phonetic": "[rɪˈvɪʒən]",
+          "meaning": "修订",
+          "structure": "re(重新) + vis(看) + ion(名词)"
+        },
+        {
+          "word": "supervisor",
+          "phonetic": "[ˈsupərˌvaɪzər]",
+          "meaning": "监督者",
+          "structure": "super(上面) + vis(看) + or(人)"
+        }
+      ]
+    },
+    {
+      "root": "ject",
+      "type": "root",
+      "meaning": "投、扔",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "project",
+          "phonetic": "[ˈprɑdʒɛkt]",
+          "meaning": "项目",
+          "structure": "pro(向前) + ject(投)"
+        },
+        {
+          "word": "object",
+          "phonetic": "[ˈɑbdʒɛkt]",
+          "meaning": "对象",
+          "structure": "ob(朝向) + ject(投)"
+        },
+        {
+          "word": "inject",
+          "phonetic": "[ɪnˈdʒɛkt]",
+          "meaning": "注入",
+          "structure": "in(进入) + ject(投)"
+        }
+      ]
+    },
+    {
+      "root": "mit/miss",
+      "type": "root",
+      "meaning": "发送",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "submit",
+          "phonetic": "[səbˈmɪt]",
+          "meaning": "提交",
+          "structure": "sub(向下) + mit(发送)"
+        },
+        {
+          "word": "transmission",
+          "phonetic": "[trænzˈmɪʃən]",
+          "meaning": "传输",
+          "structure": "trans(穿过) + miss(发送) + ion(名词)"
+        },
+        {
+          "word": "permission",
+          "phonetic": "[pərˈmɪʃən]",
+          "meaning": "权限",
+          "structure": "per(通过) + miss(发送) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "form",
+      "type": "root",
+      "meaning": "形状、形式",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "transform",
+          "phonetic": "[trænsˈfɔrm]",
+          "meaning": "转换",
+          "structure": "trans(穿过) + form(形状)"
+        },
+        {
+          "word": "platform",
+          "phonetic": "[ˈplætˌfɔrm]",
+          "meaning": "平台",
+          "structure": "plat(平的) + form(形状)"
+        },
+        {
+          "word": "information",
+          "phonetic": "[ˌɪnfərˈmeɪʃən]",
+          "meaning": "信息",
+          "structure": "in(进入) + form(形状) + ation(名词)"
+        }
+      ]
+    },
+    {
+      "root": "serve",
+      "type": "root",
+      "meaning": "服务",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "server",
+          "phonetic": "[ˈsɜrvər]",
+          "meaning": "服务器",
+          "structure": "serve(服务) + er(人/物)"
+        },
+        {
+          "word": "service",
+          "phonetic": "[ˈsɜrvɪs]",
+          "meaning": "服务",
+          "structure": "serve(服务) + ice(名词后缀)"
+        },
+        {
+          "word": "deserve",
+          "phonetic": "[dɪˈzɜrv]",
+          "meaning": "应得",
+          "structure": "de(完全) + serve(服务)"
+        }
+      ]
+    },
+    {
+      "root": "pre",
+      "type": "prefix",
+      "meaning": "预先、在前",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "preview",
+          "phonetic": "[ˈpriˌvju]",
+          "meaning": "预览",
+          "structure": "pre(预先) + view(看)"
+        },
+        {
+          "word": "preload",
+          "phonetic": "[priˈloʊd]",
+          "meaning": "预加载",
+          "structure": "pre(预先) + load(加载)"
+        },
+        {
+          "word": "predict",
+          "phonetic": "[prɪˈdɪkt]",
+          "meaning": "预测",
+          "structure": "pre(预先) + dict(说)"
+        }
+      ]
+    },
+    {
+      "root": "post",
+      "type": "prefix",
+      "meaning": "在后、之后",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "postpone",
+          "phonetic": "[poʊstˈpoʊn]",
+          "meaning": "推迟",
+          "structure": "post(在后) + pone(放置)"
+        },
+        {
+          "word": "postprocess",
+          "phonetic": "[ˌpoʊstˈprɑsɛs]",
+          "meaning": "后处理",
+          "structure": "post(在后) + process(处理)"
+        },
+        {
+          "word": "postgraduate",
+          "phonetic": "[ˌpoʊstˈgrædʒuət]",
+          "meaning": "研究生",
+          "structure": "post(在后) + graduate(毕业)"
+        }
+      ]
+    },
+    {
+      "root": "de",
+      "type": "prefix",
+      "meaning": "去除、向下、反向",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "delete",
+          "phonetic": "[dɪˈlit]",
+          "meaning": "删除",
+          "structure": "de(去除) + lete(消除)"
+        },
+        {
+          "word": "debug",
+          "phonetic": "[diˈbʌg]",
+          "meaning": "调试",
+          "structure": "de(去除) + bug(错误)"
+        },
+        {
+          "word": "deploy",
+          "phonetic": "[dɪˈplɔɪ]",
+          "meaning": "部署",
+          "structure": "de(向下) + ploy(展开)"
+        }
+      ]
+    },
+    {
+      "root": "ex/e",
+      "type": "prefix",
+      "meaning": "向外、从...出来",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "export",
+          "phonetic": "[ˈɛkspɔrt]",
+          "meaning": "导出",
+          "structure": "ex(向外) + port(携带)"
+        },
+        {
+          "word": "execute",
+          "phonetic": "[ˈɛksɪˌkjut]",
+          "meaning": "执行",
+          "structure": "ex(向外) + ecute(跟随)"
+        },
+        {
+          "word": "extract",
+          "phonetic": "[ɪkˈstrækt]",
+          "meaning": "提取",
+          "structure": "ex(向外) + tract(拉)"
+        }
+      ]
+    },
+    {
+      "root": "in/im",
+      "type": "prefix",
+      "meaning": "进入、在内、向内",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "input",
+          "phonetic": "[ˈɪnˌpʊt]",
+          "meaning": "输入",
+          "structure": "in(进入) + put(放)"
+        },
+        {
+          "word": "import",
+          "phonetic": "[ˈɪmpɔrt]",
+          "meaning": "导入",
+          "structure": "im(进入) + port(携带)"
+        },
+        {
+          "word": "include",
+          "phonetic": "[ɪnˈklud]",
+          "meaning": "包含",
+          "structure": "in(在内) + clude(关闭)"
+        }
+      ]
+    },
+    {
+      "root": "con/com",
+      "type": "prefix",
+      "meaning": "一起、共同、完全",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "connect",
+          "phonetic": "[kəˈnɛkt]",
+          "meaning": "连接",
+          "structure": "con(一起) + nect(绑定)"
+        },
+        {
+          "word": "compile",
+          "phonetic": "[kəmˈpaɪl]",
+          "meaning": "编译",
+          "structure": "com(完全) + pile(收集)"
+        },
+        {
+          "word": "configure",
+          "phonetic": "[kənˈfɪgjər]",
+          "meaning": "配置",
+          "structure": "con(一起) + figure(形状)"
+        }
+      ]
+    },
+    {
+      "root": "trans",
+      "type": "prefix",
+      "meaning": "穿过、转换、跨越",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "transfer",
+          "phonetic": "[ˈtrænsfər]",
+          "meaning": "传输",
+          "structure": "trans(穿过) + fer(携带)"
+        },
+        {
+          "word": "translate",
+          "phonetic": "[trænsˈleɪt]",
+          "meaning": "翻译",
+          "structure": "trans(转换) + late(携带)"
+        },
+        {
+          "word": "transform",
+          "phonetic": "[trænsˈfɔrm]",
+          "meaning": "变换",
+          "structure": "trans(转换) + form(形状)"
+        }
+      ]
+    },
+    {
+      "root": "over",
+      "type": "prefix",
+      "meaning": "超过、在上、过度",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "override",
+          "phonetic": "[ˌoʊvərˈraɪd]",
+          "meaning": "重写",
+          "structure": "over(超过) + ride(骑)"
+        },
+        {
+          "word": "overflow",
+          "phonetic": "[ˌoʊvərˈfloʊ]",
+          "meaning": "溢出",
+          "structure": "over(超过) + flow(流动)"
+        },
+        {
+          "word": "overload",
+          "phonetic": "[ˌoʊvərˈloʊd]",
+          "meaning": "重载",
+          "structure": "over(超过) + load(加载)"
+        }
+      ]
+    },
+    {
+      "root": "under",
+      "type": "prefix",
+      "meaning": "在下面、不足",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "understand",
+          "phonetic": "[ˌʌndərˈstænd]",
+          "meaning": "理解",
+          "structure": "under(在下) + stand(站立)"
+        },
+        {
+          "word": "underline",
+          "phonetic": "[ˈʌndərˌlaɪn]",
+          "meaning": "下划线",
+          "structure": "under(在下) + line(线)"
+        },
+        {
+          "word": "underscore",
+          "phonetic": "[ˈʌndərˌskɔr]",
+          "meaning": "下划线",
+          "structure": "under(在下) + score(记号)"
+        }
+      ]
+    },
+    {
+      "root": "out",
+      "type": "prefix",
+      "meaning": "向外、超出",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "output",
+          "phonetic": "[ˈaʊtˌpʊt]",
+          "meaning": "输出",
+          "structure": "out(向外) + put(放)"
+        },
+        {
+          "word": "outline",
+          "phonetic": "[ˈaʊtˌlaɪn]",
+          "meaning": "轮廓",
+          "structure": "out(向外) + line(线)"
+        },
+        {
+          "word": "outstanding",
+          "phonetic": "[aʊtˈstændɪŋ]",
+          "meaning": "杰出的",
+          "structure": "out(超出) + standing(站立)"
+        }
+      ]
+    },
+    {
+      "root": "up",
+      "type": "prefix",
+      "meaning": "向上、增加",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "update",
+          "phonetic": "[ʌpˈdeɪt]",
+          "meaning": "更新",
+          "structure": "up(向上) + date(日期)"
+        },
+        {
+          "word": "upload",
+          "phonetic": "[ʌpˈloʊd]",
+          "meaning": "上传",
+          "structure": "up(向上) + load(加载)"
+        },
+        {
+          "word": "upgrade",
+          "phonetic": "[ʌpˈgreɪd]",
+          "meaning": "升级",
+          "structure": "up(向上) + grade(等级)"
+        }
+      ]
+    },
+    {
+      "root": "down",
+      "type": "prefix",
+      "meaning": "向下、降低",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "download",
+          "phonetic": "[ˈdaʊnˌloʊd]",
+          "meaning": "下载",
+          "structure": "down(向下) + load(加载)"
+        },
+        {
+          "word": "downgrade",
+          "phonetic": "[ˈdaʊnˌgreɪd]",
+          "meaning": "降级",
+          "structure": "down(向下) + grade(等级)"
+        },
+        {
+          "word": "downtime",
+          "phonetic": "[ˈdaʊnˌtaɪm]",
+          "meaning": "停机时间",
+          "structure": "down(向下) + time(时间)"
+        }
+      ]
+    },
+    {
+      "root": "anti",
+      "type": "prefix",
+      "meaning": "反对、防止",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "antivirüs",
+          "phonetic": "[ˌæntiˈvaɪrəs]",
+          "meaning": "防病毒",
+          "structure": "anti(防止) + virus(病毒)"
+        },
+        {
+          "word": "antipattern",
+          "phonetic": "[ˈæntiˌpætərn]",
+          "meaning": "反模式",
+          "structure": "anti(反对) + pattern(模式)"
+        },
+        {
+          "word": "antisocial",
+          "phonetic": "[ˌæntiˈsoʊʃəl]",
+          "meaning": "反社会的",
+          "structure": "anti(反对) + social(社会)"
+        }
+      ]
+    },
+    {
+      "root": "pro",
+      "type": "prefix",
+      "meaning": "向前、支持、赞成",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "process",
+          "phonetic": "[ˈprɑsɛs]",
+          "meaning": "处理",
+          "structure": "pro(向前) + cess(行走)"
+        },
+        {
+          "word": "progress",
+          "phonetic": "[ˈprɑgrɛs]",
+          "meaning": "进步",
+          "structure": "pro(向前) + gress(行走)"
+        },
+        {
+          "word": "protocol",
+          "phonetic": "[ˈproʊtəˌkɔl]",
+          "meaning": "协议",
+          "structure": "proto(第一) + col(胶水)"
+        }
+      ]
+    },
+    {
+      "root": "counter",
+      "type": "prefix",
+      "meaning": "对抗、相反",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "counteract",
+          "phonetic": "[ˌkaʊntərˈækt]",
+          "meaning": "抵消",
+          "structure": "counter(对抗) + act(行动)"
+        },
+        {
+          "word": "counterpart",
+          "phonetic": "[ˈkaʊntərˌpɑrt]",
+          "meaning": "对应物",
+          "structure": "counter(相对) + part(部分)"
+        },
+        {
+          "word": "countdown",
+          "phonetic": "[ˈkaʊntˌdaʊn]",
+          "meaning": "倒计时",
+          "structure": "count(计数) + down(向下)"
+        }
+      ]
+    },
+    {
+      "root": "non",
+      "type": "prefix",
+      "meaning": "不、非",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "nonstop",
+          "phonetic": "[ˈnɑnˌstɑp]",
+          "meaning": "不停的",
+          "structure": "non(不) + stop(停止)"
+        },
+        {
+          "word": "nonprofit",
+          "phonetic": "[ˈnɑnˈprɑfɪt]",
+          "meaning": "非营利",
+          "structure": "non(非) + profit(利润)"
+        },
+        {
+          "word": "nonlinear",
+          "phonetic": "[nɑnˈlɪniər]",
+          "meaning": "非线性",
+          "structure": "non(非) + linear(线性)"
+        }
+      ]
+    },
+    {
+      "root": "un",
+      "type": "prefix",
+      "meaning": "不、未、反向动作",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "unlimited",
+          "phonetic": "[ʌnˈlɪmɪtɪd]",
+          "meaning": "无限的",
+          "structure": "un(不) + limited(有限的)"
+        },
+        {
+          "word": "uninstall",
+          "phonetic": "[ˌʌnɪnˈstɔl]",
+          "meaning": "卸载",
+          "structure": "un(反向) + install(安装)"
+        },
+        {
+          "word": "unknown",
+          "phonetic": "[ʌnˈnoʊn]",
+          "meaning": "未知的",
+          "structure": "un(未) + known(已知的)"
+        }
+      ]
+    },
+    {
+      "root": "dis",
+      "type": "prefix",
+      "meaning": "不、分离、相反",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "disconnect",
+          "phonetic": "[ˌdɪskəˈnɛkt]",
+          "meaning": "断开连接",
+          "structure": "dis(分离) + connect(连接)"
+        },
+        {
+          "word": "disable",
+          "phonetic": "[dɪsˈeɪbəl]",
+          "meaning": "禁用",
+          "structure": "dis(相反) + able(能够)"
+        },
+        {
+          "word": "display",
+          "phonetic": "[dɪˈspleɪ]",
+          "meaning": "显示",
+          "structure": "dis(分开) + play(展示)"
+        }
+      ]
+    },
+    {
+      "root": "mis",
+      "type": "prefix",
+      "meaning": "错误、坏",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "mistake",
+          "phonetic": "[mɪˈsteɪk]",
+          "meaning": "错误",
+          "structure": "mis(错误) + take(拿)"
+        },
+        {
+          "word": "mismatch",
+          "phonetic": "[mɪsˈmætʃ]",
+          "meaning": "不匹配",
+          "structure": "mis(错误) + match(匹配)"
+        },
+        {
+          "word": "mislead",
+          "phonetic": "[mɪsˈlid]",
+          "meaning": "误导",
+          "structure": "mis(错误) + lead(引导)"
+        }
+      ]
+    },
+    {
+      "root": "meta",
+      "type": "prefix",
+      "meaning": "超越、关于",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "metadata",
+          "phonetic": "[ˈmɛtəˌdeɪtə]",
+          "meaning": "元数据",
+          "structure": "meta(关于) + data(数据)"
+        },
+        {
+          "word": "method",
+          "phonetic": "[ˈmɛθəd]",
+          "meaning": "方法",
+          "structure": "meta(超越) + hod(路径)"
+        },
+        {
+          "word": "metaphor",
+          "phonetic": "[ˈmɛtəˌfɔr]",
+          "meaning": "隐喻",
+          "structure": "meta(超越) + phor(携带)"
+        }
+      ]
+    },
+    {
+      "root": "macro",
+      "type": "prefix",
+      "meaning": "大、长",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "macroeconomics",
+          "phonetic": "[ˌmækroʊˌɛkəˈnɑmɪks]",
+          "meaning": "宏观经济学",
+          "structure": "macro(大) + economics(经济学)"
+        },
+        {
+          "word": "macro",
+          "phonetic": "[ˈmækroʊ]",
+          "meaning": "宏",
+          "structure": "macro(大)"
+        },
+        {
+          "word": "macroscopic",
+          "phonetic": "[ˌmækrəˈskɑpɪk]",
+          "meaning": "宏观的",
+          "structure": "macro(大) + scopic(看的)"
+        }
+      ]
+    },
+    {
+      "root": "neo",
+      "type": "prefix",
+      "meaning": "新的",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "neonatal",
+          "phonetic": "[ˌnioʊˈneɪtəl]",
+          "meaning": "新生儿的",
+          "structure": "neo(新的) + natal(出生的)"
+        },
+        {
+          "word": "neologism",
+          "phonetic": "[niˈɑləˌdʒɪzəm]",
+          "meaning": "新词",
+          "structure": "neo(新的) + log(词) + ism(主义)"
+        },
+        {
+          "word": "neoconservative",
+          "phonetic": "[ˌnioʊkənˈsɜrvətɪv]",
+          "meaning": "新保守主义的",
+          "structure": "neo(新的) + conservative(保守的)"
+        }
+      ]
+    },
+    {
+      "root": "pseudo",
+      "type": "prefix",
+      "meaning": "假的、伪",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "pseudocode",
+          "phonetic": "[ˈsudoʊˌkoʊd]",
+          "meaning": "伪代码",
+          "structure": "pseudo(伪) + code(代码)"
+        },
+        {
+          "word": "pseudonym",
+          "phonetic": "[ˈsudəˌnɪm]",
+          "meaning": "笔名",
+          "structure": "pseudo(假的) + nym(名字)"
+        },
+        {
+          "word": "pseudoscience",
+          "phonetic": "[ˈsudoʊˌsaɪəns]",
+          "meaning": "伪科学",
+          "structure": "pseudo(伪) + science(科学)"
+        }
+      ]
+    },
+    {
+      "root": "hyper",
+      "type": "prefix",
+      "meaning": "超过、过度",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "hyperlink",
+          "phonetic": "[ˈhaɪpərˌlɪŋk]",
+          "meaning": "超链接",
+          "structure": "hyper(超过) + link(链接)"
+        },
+        {
+          "word": "hypertext",
+          "phonetic": "[ˈhaɪpərˌtɛkst]",
+          "meaning": "超文本",
+          "structure": "hyper(超过) + text(文本)"
+        },
+        {
+          "word": "hyperactive",
+          "phonetic": "[ˌhaɪpərˈæktɪv]",
+          "meaning": "过度活跃的",
+          "structure": "hyper(过度) + active(活跃的)"
+        }
+      ]
+    },
+    {
+      "root": "ultra",
+      "type": "prefix",
+      "meaning": "超出、极端",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "ultraviolet",
+          "phonetic": "[ˌʌltrəˈvaɪələt]",
+          "meaning": "紫外线",
+          "structure": "ultra(超出) + violet(紫色)"
+        },
+        {
+          "word": "ultrasound",
+          "phonetic": "[ˈʌltrəˌsaʊnd]",
+          "meaning": "超声波",
+          "structure": "ultra(超出) + sound(声音)"
+        },
+        {
+          "word": "ultramodern",
+          "phonetic": "[ˌʌltrəˈmɑdərn]",
+          "meaning": "超现代的",
+          "structure": "ultra(极端) + modern(现代的)"
+        }
+      ]
+    },
+    {
+      "root": "duct/duc",
+      "type": "root",
+      "meaning": "引导、带领",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "conduct",
+          "phonetic": "[kənˈdʌkt]",
+          "meaning": "指挥、传导",
+          "structure": "con(一起) + duct(引导)"
+        },
+        {
+          "word": "produce",
+          "phonetic": "[prəˈdus]",
+          "meaning": "生产",
+          "structure": "pro(向前) + duc(带领) + e"
+        },
+        {
+          "word": "introduce",
+          "phonetic": "[ˌɪntrəˈdus]",
+          "meaning": "介绍",
+          "structure": "intro(进入) + duc(引导) + e"
+        }
+      ]
+    },
+    {
+      "root": "fact/fect",
+      "type": "root",
+      "meaning": "做、制作",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "factory",
+          "phonetic": "[ˈfæktəri]",
+          "meaning": "工厂",
+          "structure": "fact(制作) + ory(场所)"
+        },
+        {
+          "word": "perfect",
+          "phonetic": "[ˈpɜrfɪkt]",
+          "meaning": "完美的",
+          "structure": "per(通过) + fect(做)"
+        },
+        {
+          "word": "defect",
+          "phonetic": "[ˈdifɛkt]",
+          "meaning": "缺陷",
+          "structure": "de(去除) + fect(做)"
+        }
+      ]
+    },
+    {
+      "root": "spect",
+      "type": "root",
+      "meaning": "看",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "inspect",
+          "phonetic": "[ɪnˈspɛkt]",
+          "meaning": "检查",
+          "structure": "in(进入) + spect(看)"
+        },
+        {
+          "word": "respect",
+          "phonetic": "[rɪˈspɛkt]",
+          "meaning": "尊重",
+          "structure": "re(重新) + spect(看)"
+        },
+        {
+          "word": "perspective",
+          "phonetic": "[pərˈspɛktɪv]",
+          "meaning": "观点",
+          "structure": "per(通过) + spect(看) + ive(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "tract",
+      "type": "root",
+      "meaning": "拉、拖",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "abstract",
+          "phonetic": "[ˈæbstrækt]",
+          "meaning": "抽象",
+          "structure": "abs(远离) + tract(拉)"
+        },
+        {
+          "word": "contract",
+          "phonetic": "[ˈkɑntrækt]",
+          "meaning": "合同",
+          "structure": "con(一起) + tract(拉)"
+        },
+        {
+          "word": "attraction",
+          "phonetic": "[əˈtrækʃən]",
+          "meaning": "吸引",
+          "structure": "at(朝向) + tract(拉) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "flex/flect",
+      "type": "root",
+      "meaning": "弯曲",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "flexible",
+          "phonetic": "[ˈflɛksəbəl]",
+          "meaning": "灵活的",
+          "structure": "flex(弯曲) + ible(能够)"
+        },
+        {
+          "word": "reflect",
+          "phonetic": "[rɪˈflɛkt]",
+          "meaning": "反射",
+          "structure": "re(回) + flect(弯曲)"
+        },
+        {
+          "word": "deflect",
+          "phonetic": "[dɪˈflɛkt]",
+          "meaning": "偏转",
+          "structure": "de(离开) + flect(弯曲)"
+        }
+      ]
+    },
+    {
+      "root": "vert/vers",
+      "type": "root",
+      "meaning": "转",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "convert",
+          "phonetic": "[kənˈvɜrt]",
+          "meaning": "转换",
+          "structure": "con(一起) + vert(转)"
+        },
+        {
+          "word": "reverse",
+          "phonetic": "[rɪˈvɜrs]",
+          "meaning": "反转",
+          "structure": "re(回) + vers(转) + e"
+        },
+        {
+          "word": "version",
+          "phonetic": "[ˈvɜrʒən]",
+          "meaning": "版本",
+          "structure": "vers(转) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "pend",
+      "type": "root",
+      "meaning": "悬挂、待定",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "depend",
+          "phonetic": "[dɪˈpɛnd]",
+          "meaning": "依赖",
+          "structure": "de(向下) + pend(悬挂)"
+        },
+        {
+          "word": "suspend",
+          "phonetic": "[səˈspɛnd]",
+          "meaning": "暂停",
+          "structure": "sus(在下) + pend(悬挂)"
+        },
+        {
+          "word": "pending",
+          "phonetic": "[ˈpɛndɪŋ]",
+          "meaning": "待定的",
+          "structure": "pend(待定) + ing(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "cred",
+      "type": "root",
+      "meaning": "相信",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "credit",
+          "phonetic": "[ˈkrɛdɪt]",
+          "meaning": "信用",
+          "structure": "cred(相信) + it(名词后缀)"
+        },
+        {
+          "word": "incredible",
+          "phonetic": "[ɪnˈkrɛdəbəl]",
+          "meaning": "难以置信的",
+          "structure": "in(不) + cred(相信) + ible(能够)"
+        },
+        {
+          "word": "credentials",
+          "phonetic": "[krɪˈdɛnʃəlz]",
+          "meaning": "凭证",
+          "structure": "cred(相信) + ent(形容词) + ials(名词)"
+        }
+      ]
+    },
+    {
+      "root": "dict",
+      "type": "root",
+      "meaning": "说",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "dictionary",
+          "phonetic": "[ˈdɪkʃəˌnɛri]",
+          "meaning": "字典",
+          "structure": "dict(说) + ion(名词) + ary(场所)"
+        },
+        {
+          "word": "predict",
+          "phonetic": "[prɪˈdɪkt]",
+          "meaning": "预测",
+          "structure": "pre(预先) + dict(说)"
+        },
+        {
+          "word": "contradiction",
+          "phonetic": "[ˌkɑntrəˈdɪkʃən]",
+          "meaning": "矛盾",
+          "structure": "contra(相反) + dict(说) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "sect",
+      "type": "root",
+      "meaning": "切",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "section",
+          "phonetic": "[ˈsɛkʃən]",
+          "meaning": "部分",
+          "structure": "sect(切) + ion(名词)"
+        },
+        {
+          "word": "intersection",
+          "phonetic": "[ˌɪntərˈsɛkʃən]",
+          "meaning": "交集",
+          "structure": "inter(相互) + sect(切) + ion(名词)"
+        },
+        {
+          "word": "dissect",
+          "phonetic": "[dɪˈsɛkt]",
+          "meaning": "解剖",
+          "structure": "dis(分开) + sect(切)"
+        }
+      ]
+    },
+    {
+      "root": "press",
+      "type": "root",
+      "meaning": "压",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "compress",
+          "phonetic": "[kəmˈprɛs]",
+          "meaning": "压缩",
+          "structure": "com(一起) + press(压)"
+        },
+        {
+          "word": "express",
+          "phonetic": "[ɪkˈsprɛs]",
+          "meaning": "表达",
+          "structure": "ex(向外) + press(压)"
+        },
+        {
+          "word": "impression",
+          "phonetic": "[ɪmˈprɛʃən]",
+          "meaning": "印象",
+          "structure": "im(进入) + press(压) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "gress",
+      "type": "root",
+      "meaning": "行走",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "progress",
+          "phonetic": "[ˈprɑgrɛs]",
+          "meaning": "进步",
+          "structure": "pro(向前) + gress(行走)"
+        },
+        {
+          "word": "congress",
+          "phonetic": "[ˈkɑŋgrɛs]",
+          "meaning": "国会",
+          "structure": "con(一起) + gress(行走)"
+        },
+        {
+          "word": "aggressive",
+          "phonetic": "[əˈgrɛsɪv]",
+          "meaning": "侵略的",
+          "structure": "ag(朝向) + gress(行走) + ive(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "cede/cess",
+      "type": "root",
+      "meaning": "去、让步",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "access",
+          "phonetic": "[ˈæksɛs]",
+          "meaning": "访问",
+          "structure": "ac(朝向) + cess(去)"
+        },
+        {
+          "word": "process",
+          "phonetic": "[ˈprɑsɛs]",
+          "meaning": "处理",
+          "structure": "pro(向前) + cess(去)"
+        },
+        {
+          "word": "succeed",
+          "phonetic": "[səkˈsid]",
+          "meaning": "成功",
+          "structure": "suc(在下) + cede(去)"
+        }
+      ]
+    },
+    {
+      "root": "cur/curs",
+      "type": "root",
+      "meaning": "跑",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "current",
+          "phonetic": "[ˈkɜrənt]",
+          "meaning": "当前的",
+          "structure": "cur(跑) + ent(形容词)"
+        },
+        {
+          "word": "cursor",
+          "phonetic": "[ˈkɜrsər]",
+          "meaning": "光标",
+          "structure": "curs(跑) + or(物)"
+        },
+        {
+          "word": "recursive",
+          "phonetic": "[rɪˈkɜrsɪv]",
+          "meaning": "递归的",
+          "structure": "re(重新) + curs(跑) + ive(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "rupt",
+      "type": "root",
+      "meaning": "破",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "interrupt",
+          "phonetic": "[ˌɪntəˈrʌpt]",
+          "meaning": "中断",
+          "structure": "inter(相互) + rupt(破)"
+        },
+        {
+          "word": "corrupt",
+          "phonetic": "[kəˈrʌpt]",
+          "meaning": "腐败",
+          "structure": "cor(完全) + rupt(破)"
+        },
+        {
+          "word": "disrupt",
+          "phonetic": "[dɪsˈrʌpt]",
+          "meaning": "破坏",
+          "structure": "dis(分开) + rupt(破)"
+        }
+      ]
+    },
+    {
+      "root": "cept/ceiv",
+      "type": "root",
+      "meaning": "接受、拿",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "receive",
+          "phonetic": "[rɪˈsiv]",
+          "meaning": "接收",
+          "structure": "re(回) + ceiv(接受) + e"
+        },
+        {
+          "word": "accept",
+          "phonetic": "[ækˈsɛpt]",
+          "meaning": "接受",
+          "structure": "ac(朝向) + cept(拿)"
+        },
+        {
+          "word": "exception",
+          "phonetic": "[ɪkˈsɛpʃən]",
+          "meaning": "异常",
+          "structure": "ex(向外) + cept(拿) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "pos/pon",
+      "type": "root",
+      "meaning": "放置",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "position",
+          "phonetic": "[pəˈzɪʃən]",
+          "meaning": "位置",
+          "structure": "pos(放置) + it + ion(名词)"
+        },
+        {
+          "word": "compose",
+          "phonetic": "[kəmˈpoʊz]",
+          "meaning": "组成",
+          "structure": "com(一起) + pos(放置) + e"
+        },
+        {
+          "word": "postpone",
+          "phonetic": "[poʊstˈpoʊn]",
+          "meaning": "推迟",
+          "structure": "post(后) + pon(放置) + e"
+        }
+      ]
+    },
+    {
+      "root": "tend/tens",
+      "type": "root",
+      "meaning": "伸展",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "extend",
+          "phonetic": "[ɪkˈstɛnd]",
+          "meaning": "扩展",
+          "structure": "ex(向外) + tend(伸展)"
+        },
+        {
+          "word": "intention",
+          "phonetic": "[ɪnˈtɛnʃən]",
+          "meaning": "意图",
+          "structure": "in(进入) + tens(伸展) + ion(名词)"
+        },
+        {
+          "word": "tension",
+          "phonetic": "[ˈtɛnʃən]",
+          "meaning": "张力",
+          "structure": "tens(伸展) + ion(名词)"
+        }
+      ]
+    },
+    {
+      "root": "fer",
+      "type": "root",
+      "meaning": "携带、承受",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "transfer",
+          "phonetic": "[ˈtrænsfər]",
+          "meaning": "传输",
+          "structure": "trans(穿过) + fer(携带)"
+        },
+        {
+          "word": "prefer",
+          "phonetic": "[prɪˈfər]",
+          "meaning": "更喜欢",
+          "structure": "pre(预先) + fer(携带)"
+        },
+        {
+          "word": "reference",
+          "phonetic": "[ˈrɛfərəns]",
+          "meaning": "引用",
+          "structure": "re(回) + fer(携带) + ence(名词)"
+        }
+      ]
+    },
+    {
+      "root": "gen",
+      "type": "root",
+      "meaning": "产生、种类",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "generate",
+          "phonetic": "[ˈdʒɛnəˌreɪt]",
+          "meaning": "生成",
+          "structure": "gen(产生) + er + ate(动词)"
+        },
+        {
+          "word": "gender",
+          "phonetic": "[ˈdʒɛndər]",
+          "meaning": "性别",
+          "structure": "gen(种类) + der(名词后缀)"
+        },
+        {
+          "word": "generic",
+          "phonetic": "[dʒəˈnɛrɪk]",
+          "meaning": "通用的",
+          "structure": "gen(种类) + er + ic(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "loc",
+      "type": "root",
+      "meaning": "地方",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "location",
+          "phonetic": "[loʊˈkeɪʃən]",
+          "meaning": "位置",
+          "structure": "loc(地方) + ation(名词)"
+        },
+        {
+          "word": "allocate",
+          "phonetic": "[ˈæləˌkeɪt]",
+          "meaning": "分配",
+          "structure": "al(朝向) + loc(地方) + ate(动词)"
+        },
+        {
+          "word": "local",
+          "phonetic": "[ˈloʊkəl]",
+          "meaning": "本地的",
+          "structure": "loc(地方) + al(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "mem",
+      "type": "root",
+      "meaning": "记忆",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "memory",
+          "phonetic": "[ˈmɛməri]",
+          "meaning": "内存",
+          "structure": "mem(记忆) + ory(名词后缀)"
+        },
+        {
+          "word": "remember",
+          "phonetic": "[rɪˈmɛmbər]",
+          "meaning": "记住",
+          "structure": "re(重新) + mem(记忆) + ber"
+        },
+        {
+          "word": "memorial",
+          "phonetic": "[məˈmɔriəl]",
+          "meaning": "纪念的",
+          "structure": "mem(记忆) + or + ial(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "spec",
+      "type": "root",
+      "meaning": "看、种类",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "specific",
+          "phonetic": "[spəˈsɪfɪk]",
+          "meaning": "具体的",
+          "structure": "spec(种类) + ific(使成为)"
+        },
+        {
+          "word": "specification",
+          "phonetic": "[ˌspɛsəfəˈkeɪʃən]",
+          "meaning": "规范",
+          "structure": "spec(种类) + ific + ation(名词)"
+        },
+        {
+          "word": "special",
+          "phonetic": "[ˈspɛʃəl]",
+          "meaning": "特殊的",
+          "structure": "spec(种类) + ial(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "temp",
+      "type": "root",
+      "meaning": "时间",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "temporary",
+          "phonetic": "[ˈtɛmpəˌrɛri]",
+          "meaning": "临时的",
+          "structure": "temp(时间) + orary(形容词)"
+        },
+        {
+          "word": "template",
+          "phonetic": "[ˈtɛmplət]",
+          "meaning": "模板",
+          "structure": "temp(时间) + late(携带)"
+        },
+        {
+          "word": "contemporary",
+          "phonetic": "[kənˈtɛmpəˌrɛri]",
+          "meaning": "当代的",
+          "structure": "con(一起) + temp(时间) + orary(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "term",
+      "type": "root",
+      "meaning": "边界、结束",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "terminal",
+          "phonetic": "[ˈtɜrmənəl]",
+          "meaning": "终端",
+          "structure": "term(结束) + inal(形容词)"
+        },
+        {
+          "word": "determine",
+          "phonetic": "[dɪˈtɜrmən]",
+          "meaning": "确定",
+          "structure": "de(完全) + term(边界) + ine(动词)"
+        },
+        {
+          "word": "external",
+          "phonetic": "[ɪkˈstɜrnəl]",
+          "meaning": "外部的",
+          "structure": "ex(向外) + term(边界) + nal(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "val",
+      "type": "root",
+      "meaning": "价值、强壮",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "value",
+          "phonetic": "[ˈvælju]",
+          "meaning": "值",
+          "structure": "val(价值) + ue(名词后缀)"
+        },
+        {
+          "word": "validate",
+          "phonetic": "[ˈvæləˌdeɪt]",
+          "meaning": "验证",
+          "structure": "val(强壮) + id + ate(动词)"
+        },
+        {
+          "word": "equivalent",
+          "phonetic": "[ɪˈkwɪvələnt]",
+          "meaning": "等价的",
+          "structure": "equi(相等) + val(价值) + ent(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "ware",
+      "type": "suffix",
+      "meaning": "软件、商品",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "software",
+          "phonetic": "[ˈsɔftˌwɛr]",
+          "meaning": "软件",
+          "structure": "soft(软的) + ware(商品)"
+        },
+        {
+          "word": "hardware",
+          "phonetic": "[ˈhɑrdˌwɛr]",
+          "meaning": "硬件",
+          "structure": "hard(硬的) + ware(商品)"
+        },
+        {
+          "word": "firmware",
+          "phonetic": "[ˈfɜrmˌwɛr]",
+          "meaning": "固件",
+          "structure": "firm(固定) + ware(商品)"
+        }
+      ]
+    },
+    {
+      "root": "er/or/ar",
+      "type": "suffix",
+      "meaning": "执行者、物",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "compiler",
+          "phonetic": "[kəmˈpaɪlər]",
+          "meaning": "编译器",
+          "structure": "compile(编译) + er(物)"
+        },
+        {
+          "word": "processor",
+          "phonetic": "[ˈprɑsɛsər]",
+          "meaning": "处理器",
+          "structure": "process(处理) + or(物)"
+        },
+        {
+          "word": "regular",
+          "phonetic": "[ˈrɛgjələr]",
+          "meaning": "正则的",
+          "structure": "regul(规则) + ar(形容词)"
+        }
+      ]
+    },
+    {
+      "root": "ify/ize",
+      "type": "suffix",
+      "meaning": "使成为",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "modify",
+          "phonetic": "[ˈmɑdəˌfaɪ]",
+          "meaning": "修改",
+          "structure": "mod(方式) + ify(使成为)"
+        },
+        {
+          "word": "optimize",
+          "phonetic": "[ˈɑptəˌmaɪz]",
+          "meaning": "优化",
+          "structure": "optim(最好) + ize(使成为)"
+        },
+        {
+          "word": "initialize",
+          "phonetic": "[ɪˈnɪʃəˌlaɪz]",
+          "meaning": "初始化",
+          "structure": "initial(初始) + ize(使成为)"
+        }
+      ]
+    },
+    {
+      "root": "ment",
+      "type": "suffix",
+      "meaning": "行为、结果",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "development",
+          "phonetic": "[dɪˈvɛləpmənt]",
+          "meaning": "开发",
+          "structure": "develop(开发) + ment(行为)"
+        },
+        {
+          "word": "implement",
+          "phonetic": "[ˈɪmpləmənt]",
+          "meaning": "实现",
+          "structure": "im(进入) + ple(填充) + ment(行为)"
+        },
+        {
+          "word": "requirement",
+          "phonetic": "[rɪˈkwaɪərmənt]",
+          "meaning": "需求",
+          "structure": "require(需要) + ment(结果)"
+        }
+      ]
+    },
+    {
+      "root": "ly",
+      "type": "suffix",
+      "meaning": "副词后缀",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "quickly",
+          "phonetic": "[ˈkwɪkli]",
+          "meaning": "快速地",
+          "structure": "quick(快的) + ly(副词)"
+        },
+        {
+          "word": "automatically",
+          "phonetic": "[ˌɔtəˈmætɪkli]",
+          "meaning": "自动地",
+          "structure": "automatic(自动的) + ly(副词)"
+        },
+        {
+          "word": "specifically",
+          "phonetic": "[spəˈsɪfɪkli]",
+          "meaning": "具体地",
+          "structure": "specific(具体的) + ly(副词)"
+        }
+      ]
+    },
+    {
+      "root": "ous/ious",
+      "type": "suffix",
+      "meaning": "充满...的",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "famous",
+          "phonetic": "[ˈfeɪməs]",
+          "meaning": "著名的",
+          "structure": "fame(名声) + ous(充满)"
+        },
+        {
+          "word": "serious",
+          "phonetic": "[ˈsɪriəs]",
+          "meaning": "严重的",
+          "structure": "ser(庄重) + ious(充满)"
+        },
+        {
+          "word": "previous",
+          "phonetic": "[ˈpriviəs]",
+          "meaning": "之前的",
+          "structure": "prev(在前) + ious(充满)"
+        }
+      ]
+    },
+    {
+      "root": "ive/ative",
+      "type": "suffix",
+      "meaning": "有...性质的",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "active",
+          "phonetic": "[ˈæktɪv]",
+          "meaning": "活跃的",
+          "structure": "act(行动) + ive(性质)"
+        },
+        {
+          "word": "creative",
+          "phonetic": "[kriˈeɪtɪv]",
+          "meaning": "创造性的",
+          "structure": "creat(创造) + ive(性质)"
+        },
+        {
+          "word": "negative",
+          "phonetic": "[ˈnɛgətɪv]",
+          "meaning": "负的",
+          "structure": "neg(否定) + ative(性质)"
+        }
+      ]
+    },
+    {
+      "root": "ic/ical",
+      "type": "suffix",
+      "meaning": "...的，有关...的",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "static",
+          "phonetic": "[ˈstætɪk]",
+          "meaning": "静态的",
+          "structure": "stat(站立) + ic(有关)"
+        },
+        {
+          "word": "dynamic",
+          "phonetic": "[daɪˈnæmɪk]",
+          "meaning": "动态的",
+          "structure": "dynam(力量) + ic(有关)"
+        },
+        {
+          "word": "logical",
+          "phonetic": "[ˈlɑdʒɪkəl]",
+          "meaning": "逻辑的",
+          "structure": "log(逻辑) + ical(有关)"
+        }
+      ]
+    },
+    {
+      "root": "ant/ent",
+      "type": "suffix",
+      "meaning": "...的人/物",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "assistant",
+          "phonetic": "[əˈsɪstənt]",
+          "meaning": "助手",
+          "structure": "assist(协助) + ant(人)"
+        },
+        {
+          "word": "client",
+          "phonetic": "[ˈklaɪənt]",
+          "meaning": "客户端",
+          "structure": "cli(倾斜) + ent(物)"
+        },
+        {
+          "word": "component",
+          "phonetic": "[kəmˈpoʊnənt]",
+          "meaning": "组件",
+          "structure": "com(一起) + pon(放置) + ent(物)"
+        }
+      ]
+    },
+    {
+      "root": "ism",
+      "type": "suffix",
+      "meaning": "主义、状态",
+      "origin": "希腊语",
+      "examples": [
+        {
+          "word": "algorithm",
+          "phonetic": "[ˈælgəˌrɪðəm]",
+          "meaning": "算法",
+          "structure": "algorith(计算方法) + m"
+        },
+        {
+          "word": "mechanism",
+          "phonetic": "[ˈmɛkəˌnɪzəm]",
+          "meaning": "机制",
+          "structure": "mechan(机械) + ism(状态)"
+        },
+        {
+          "word": "organism",
+          "phonetic": "[ˈɔrgəˌnɪzəm]",
+          "meaning": "有机体",
+          "structure": "organ(器官) + ism(状态)"
+        }
+      ]
+    },
+    {
+      "root": "age",
+      "type": "suffix",
+      "meaning": "行为、状态、集合",
+      "origin": "法语",
+      "examples": [
+        {
+          "word": "package",
+          "phonetic": "[ˈpækɪdʒ]",
+          "meaning": "包",
+          "structure": "pack(打包) + age(集合)"
+        },
+        {
+          "word": "storage",
+          "phonetic": "[ˈstɔrɪdʒ]",
+          "meaning": "存储",
+          "structure": "store(存储) + age(行为)"
+        },
+        {
+          "word": "message",
+          "phonetic": "[ˈmɛsɪdʒ]",
+          "meaning": "消息",
+          "structure": "mess(发送) + age(状态)"
+        }
+      ]
+    },
+    {
+      "root": "ure/ture",
+      "type": "suffix",
+      "meaning": "行为、状态、结果",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "procedure",
+          "phonetic": "[prəˈsidʒər]",
+          "meaning": "过程",
+          "structure": "proced(前进) + ure(行为)"
+        },
+        {
+          "word": "structure",
+          "phonetic": "[ˈstrʌktʃər]",
+          "meaning": "结构",
+          "structure": "struct(建造) + ure(结果)"
+        },
+        {
+          "word": "architecture",
+          "phonetic": "[ˈɑrkəˌtɛktʃər]",
+          "meaning": "架构",
+          "structure": "archit(建筑) + ect + ure(结果)"
+        }
+      ]
+    },
+    {
+      "root": "ency/ancy",
+      "type": "suffix",
+      "meaning": "状态、性质",
+      "origin": "拉丁语",
+      "examples": [
+        {
+          "word": "frequency",
+          "phonetic": "[ˈfrikwənsi]",
+          "meaning": "频率",
+          "structure": "frequ(频繁) + ency(状态)"
+        },
+        {
+          "word": "efficiency",
+          "phonetic": "[ɪˈfɪʃənsi]",
+          "meaning": "效率",
+          "structure": "effici(有效) + ency(状态)"
+        },
+        {
+          "word": "redundancy",
+          "phonetic": "[rɪˈdʌndənsi]",
+          "meaning": "冗余",
+          "structure": "redund(多余) + ancy(状态)"
+        }
+      ]
+    },
+    {
+      "root": "ward",
+      "type": "suffix",
+      "meaning": "朝向",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "forward",
+          "phonetic": "[ˈfɔrwərd]",
+          "meaning": "向前",
+          "structure": "for(向前) + ward(朝向)"
+        },
+        {
+          "word": "backward",
+          "phonetic": "[ˈbækwərd]",
+          "meaning": "向后",
+          "structure": "back(向后) + ward(朝向)"
+        },
+        {
+          "word": "inward",
+          "phonetic": "[ˈɪnwərd]",
+          "meaning": "向内",
+          "structure": "in(进入) + ward(朝向)"
+        }
+      ]
+    },
+    {
+      "root": "ship",
+      "type": "suffix",
+      "meaning": "状态、关系、技能",
+      "origin": "古英语",
+      "examples": [
+        {
+          "word": "relationship",
+          "phonetic": "[rɪˈleɪʃənˌʃɪp]",
+          "meaning": "关系",
+          "structure": "relation(关联) + ship(关系)"
+        },
+        {
+          "word": "ownership",
+          "phonetic": "[ˈoʊnərˌʃɪp]",
+          "meaning": "所有权",
+          "structure": "owner(拥有者) + ship(状态)"
+        },
+        {
+          "word": "membership",
+          "phonetic": "[ˈmɛmbərˌʃɪp]",
+          "meaning": "会员资格",
+          "structure": "member(成员) + ship(状态)"
+        }
+      ]
+    }
+  ]
+}

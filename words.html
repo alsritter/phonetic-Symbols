@@ -181,6 +181,17 @@
       margin: 5px 0;
     }
 
+    .phonetic-display span[onclick] {
+      transition: all 0.2s ease;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .phonetic-display span[onclick]:hover {
+      background: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
     .phonetic-symbols {
       display: flex;
       gap: 3px;
@@ -227,12 +238,23 @@
       margin-right: 3px;
     }
 
-    .phonetic-symbol.playing {
+    /* 确保 .phonetic-symbol.kk 与标准 .kk 元素行为一致 */
+    .phonetic-symbol.kk {
+      cursor: pointer;
+    }
+
+    .phonetic-symbol.kk:hover {
+      transform: scale(1.05);
+    }
+
+    .phonetic-symbol.playing,
+    .phonetic-symbol.kk.playing {
       transform: scale(1.1);
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .phonetic-symbol.playing::after {
+    .phonetic-symbol.playing::after,
+    .phonetic-symbol.kk.playing::after {
       content: "♪";
       position: absolute;
       top: -5px;
@@ -490,6 +512,8 @@
       <a href="phonetic-chart.html" class="nav-link">音标表</a>
       <a href="tutorial.html" class="nav-link">学习指南</a>
       <a href="words.html" class="nav-link active">单词练习</a>
+      <a href="roots-practice.html" class="nav-link">词根词缀练习</a>
+      <a href="roots-guide.html" class="nav-link">词根词缀说明</a>
     </div>
   </div>
 
