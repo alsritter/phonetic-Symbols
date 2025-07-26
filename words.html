@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>单词练习 - PhoneticSymbols</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 300;
+    }
+
+    .navigation {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      height: fit-content;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 1.2em;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .category-item {
+      padding: 10px 15px;
+      margin: 5px 0;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    .category-item:hover {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .category-item.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .search-section {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .words-table {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    .word-text {
+      font-weight: 600;
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    .phonetic-display {
+      font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+      font-size: 1em;
+      margin: 5px 0;
+    }
+
+    .phonetic-symbols {
+      display: flex;
+      gap: 3px;
+      flex-wrap: wrap;
+    }
+
+    .phonetic-symbol {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+      font-size: 0.9em;
+      padding: 3px 6px;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    /* 元音样式 */
+    .phonetic-symbol.vowel {
+      background: #e3f2fd;
+      border: 1px solid #2196f3;
+      color: #1976d2;
+    }
+
+    .phonetic-symbol.vowel:hover {
+      background: #bbdefb;
+    }
+
+    /* 辅音样式 */
+    .phonetic-symbol.consonant {
+      background: #fff3e0;
+      border: 1px solid #ff9800;
+      color: #f57c00;
+    }
+
+    .phonetic-symbol.consonant:hover {
+      background: #ffe0b2;
+    }
+
+    .phonetic-symbol::before {
+      content: "🔊";
+      font-size: 10px;
+      margin-right: 3px;
+    }
+
+    .phonetic-symbol.playing {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .phonetic-symbol.playing::after {
+      content: "♪";
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      color: #667eea;
+      font-size: 12px;
+      animation: pulse 1s infinite;
+    }
+
+    .category-tag {
+      background: #e9ecef;
+      color: #495057;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      display: inline-block;
+    }
+
+    .meaning-text {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+
+    .translate-link {
+      display: inline-flex;
+      align-items: center;
+      color: #667eea;
+      text-decoration: none;
+      font-size: 0.85em;
+      padding: 2px 5px;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+    }
+
+    .translate-link:hover {
+      background: #f0f4ff;
+      color: #5a67d8;
+      transform: translateY(-1px);
+    }
+
+    .translate-link svg {
+      margin-right: 3px;
+    }
+
+    .loading-indicator {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .loading-indicator.show {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nav-link {
+        text-align: center;
+      }
+      
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+      
+      .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      
+      .category-item {
+        margin: 0;
+      }
+      
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      table {
+        font-size: 14px;
+      }
+      
+      td, th {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading-indicator" id="loadingIndicator">正在加载音频...</div>
+
+  <div class="header">
+    <h1>KK音标学习系统</h1>
+    <p>掌握发音，从音标开始</p>
+  </div>
+
+  <div class="navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="phonetic-chart.html" class="nav-link">音标表</a>
+      <a href="tutorial.html" class="nav-link">学习指南</a>
+      <a href="words.html" class="nav-link active">单词练习</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h3>单词分类</h3>
+      <ul class="category-list">
+        <li class="category-item active" data-scene="all">全部</li>
+        <li class="category-item" data-scene="basic">基础词汇</li>
+        <li class="category-item" data-scene="daily">日常生活</li>
+        <li class="category-item" data-scene="food">食物饮料</li>
+        <li class="category-item" data-scene="computer">计算机</li>
+        <li class="category-item" data-scene="clothing">服装配饰</li>
+        <li class="category-item" data-scene="sports">运动健身</li>
+        <li class="category-item" data-scene="travel">旅行交通</li>
+        <li class="category-item" data-scene="business">商务办公</li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="search-section">
+        <input type="text" class="search-input" placeholder="搜索单词..." id="searchInput">
+      </div>
+
+      <div class="words-table">
+        <table>
+          <thead>
+            <tr>
+              <th>单词</th>
+              <th>音标</th>
+              <th>中文意思</th>
+              <th>分类</th>
+            </tr>
+          </thead>
+          <tbody id="wordsTableBody">
+            <!-- 单词数据将在这里动态生成 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/audio-player.js"></script>
+  <script src="js/words.js"></script>
+</body>
+
+</html>

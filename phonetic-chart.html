@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 静态资源缓存控制 -->
+  <meta http-equiv="Cache-Control" content="max-age=31536000, public" />
+  <meta http-equiv="Expires" content="Thu, 31 Dec 2024 23:59:59 GMT" />
+  <link rel="preload" href="./asset/image/playIcon.gif" as="image" />
+  <title>KK音标表 - PhoneticSymbols</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 300;
+    }
+
+    .navigation {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .phonetic {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    tr:hover {
+      background-color: #f8f9ff;
+    }
+
+    .kk-table .kk {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .kk-table .kk:hover {
+      transform: scale(1.05);
+      color: #667eea;
+    }
+
+    .kk-table .kk::before {
+      content: "🔊";
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .loading-indicator {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 12px;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .loading-indicator.show {
+      opacity: 1;
+    }
+
+    .kk {
+      position: relative;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .kk.playing::after {
+      content: "♪";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #667eea;
+      font-size: 14px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .example-word {
+      font-size: 10px;
+      color: #666;
+      margin-top: 3px;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .phonetic-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 8px;
+    }
+
+    .variant-note {
+      font-size: 9px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nav-link {
+        text-align: center;
+      }
+      
+      .phonetic {
+        margin: 10px;
+        padding: 0 10px;
+      }
+      
+      th, td {
+        padding: 8px 4px;
+        font-size: 14px;
+      }
+      
+      .kk {
+        font-size: 1em;
+      }
+      
+      .example-word {
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading-indicator" id="loadingIndicator">正在预加载音频...</div>
+  
+  <div class="header">
+    <h1>KK音标表</h1>
+    <p>点击音标听发音，掌握标准美式发音</p>
+  </div>
+
+  <div class="navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="phonetic-chart.html" class="nav-link active">音标表</a>
+      <a href="tutorial.html" class="nav-link">学习指南</a>
+      <a href="words.html" class="nav-link">单词练习</a>
+    </div>
+  </div>
+
+  <div class="phonetic">
+    <table border="1" cellpadding="1" cellspacing="1" class="kk-table">
+      <thead>
+        <tr>
+          <th colspan="7">KK 音标表</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">
+            <div class="category-badge">元音</div>
+          </td>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk01.mp3">[i]</span>
+              <div class="example-word">see, meet</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk02.mp3">[ɪ]</span>
+              <div class="example-word">sit, big</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk03.mp3">[e]</span>
+              <div class="example-word">day, make</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk04.mp3">[ɛ]</span>
+              <div class="example-word">bed, red</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk05.mp3">[æ]</span>
+              <div class="example-word">cat, bad</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="1">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk07.mp3">[o]</span>
+              <div class="example-word">go, home</div>
+            </div>
+          </td>
+          <td rowspan="1">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk08.mp3">[ɔ]</span>
+              <div class="example-word">dog, all</div>
+            </div>
+          </td>
+          <td rowspan="1">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk09.mp3">[u]</span>
+              <div class="example-word">too, food</div>
+            </div>
+          </td>
+          <td rowspan="1">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk10.mp3">[ʊ]</span>
+              <div class="example-word">book, good</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk06.mp3">[ɑ]</span>
+              <div class="example-word">father, car</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk11.mp3">[ʌ]</span>
+              <div class="example-word">cup, run</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk12.mp3">[ə]</span>
+              <div class="example-word">about, sofa</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk13.mp3">[ɚ]</span>
+              <div class="example-word">butter, water</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk14.mp3">[ɝ]</span>
+              <div class="example-word">bird, work</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="category-badge">双元音</div>
+          </td>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk15.mp3">[aɪ]</span>
+              <div class="example-word">my, time</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk16.mp3">[aʊ]</span>
+              <div class="example-word">now, house</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk17.mp3">[ɔɪ]</span>
+              <div class="example-word">boy, voice</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="7">
+            <div class="category-badge">辅音</div>
+          </td>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk18.mp3">[p]</span>
+              <div class="example-word">pen, cup</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk19.mp3">[b]</span>
+              <div class="example-word">book, job</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk22.mp3">[t]</span>
+              <div class="example-word">tea, cat</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk23.mp3">[d]</span>
+              <div class="example-word">dog, red</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk24.mp3">[k]</span>
+              <div class="example-word">cat, back</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk25.mp3">[g]</span>
+              <div class="example-word">go, big</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk26.mp3">[f]</span>
+              <div class="example-word">fish, laugh</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk27.mp3">[v]</span>
+              <div class="example-word">very, love</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk28.mp3">[s]</span>
+              <div class="example-word">sun, yes</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk29.mp3">[z]</span>
+              <div class="example-word">zoo, these</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk30.mp3">[θ]</span>
+              <div class="example-word">think, bath</div>
+            </div>
+          </td>
+          <td rowspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk31.mp3">[ð]</span>
+              <div class="example-word">this, weather</div>
+            </div>
+          </td>
+          <td rowspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk32.mp3">[ʃ]</span>
+              <div class="example-word">she, wish</div>
+            </div>
+          </td>
+          <td rowspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk33.mp3">[ʒ]</span>
+              <div class="example-word">measure, vision</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk34.mp3">[tʃ]</span>
+              <div class="example-word">chair, teach</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk35.mp3">[dʒ]</span>
+              <div class="example-word">judge, bridge</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk36.mp3">[dʒ]</span>
+              <div class="example-word">jam, magic</div>
+              <div class="variant-note">词首/重音位置</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk38.mp3">[l]</span>
+              <div class="example-word">like, love</div>
+              <div class="variant-note">清晰音/词首</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk40.mp3">[r]</span>
+              <div class="example-word">red, run</div>
+              <div class="variant-note">词首/重音位置</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk42.mp3">[m]</span>
+              <div class="example-word">man, make</div>
+              <div class="variant-note">词首/重音位置</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk44.mp3">[n]</span>
+              <div class="example-word">no, name</div>
+              <div class="variant-note">词首/重音位置</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk37.mp3">[dʒ]</span>
+              <div class="example-word">village, damage</div>
+              <div class="variant-note">弱音位置/词尾</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk39.mp3">[l]</span>
+              <div class="example-word">tell, call</div>
+              <div class="variant-note">模糊音/词尾</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk41.mp3">[r]</span>
+              <div class="example-word">car, far</div>
+              <div class="variant-note">弱音位置/词尾</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk43.mp3">[m]</span>
+              <div class="example-word">time, come</div>
+              <div class="variant-note">弱音位置/词尾</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk45.mp3">[n]</span>
+              <div class="example-word">ten, sun</div>
+              <div class="variant-note">弱音位置/词尾</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk46.mp3">[ŋ]</span>
+              <div class="example-word">sing, long</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk47.mp3">[j]</span>
+              <div class="example-word">yes, you</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk48.mp3">[w]</span>
+              <div class="example-word">we, water</div>
+            </div>
+          </td>
+          <td>
+            <div class="phonetic-cell">
+              <span class="kk" data-src="./asset/audio/kk49.mp3">[h]</span>
+              <div class="example-word">he, house</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 PhoneticSymbols. 用心学习每一个音标。</p>
+  </div>
+
+  <script src="js/audio-player.js"></script>
+</body>
+
+</html>

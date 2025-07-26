@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学习指南 - PhoneticSymbols</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 300;
+    }
+
+    .navigation {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .tutorial-section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tutorial-section h2 {
+      color: #333;
+      font-size: 2em;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .tutorial-section h3 {
+      color: #555;
+      margin-top: 25px;
+      font-size: 1.3em;
+      font-weight: 600;
+      padding-left: 10px;
+      border-left: 3px solid #667eea;
+    }
+
+    .tutorial-section table {
+      margin: 15px 0;
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .tutorial-section th {
+      background: #667eea;
+      color: white;
+      padding: 12px;
+      font-weight: 600;
+    }
+
+    .tutorial-section td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .tutorial-section tr:hover {
+      background-color: #f8f9ff;
+    }
+
+    .example-breakdown {
+      background: #f8f9ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+      border-left: 3px solid #667eea;
+    }
+
+    .word-examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .word-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e0e6ed;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .word-card h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    .phonetic-breakdown {
+      font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 8px 0;
+      border-left: 2px solid #667eea;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+
+    .tutorial-section ul, .tutorial-section ol {
+      padding-left: 20px;
+    }
+
+    .tutorial-section li {
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    .tutorial-section p {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 12px;
+    }
+
+    .tutorial-section strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .tutorial-section code {
+      background: #f1f3f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+      color: #d73a49;
+      font-size: 0.9em;
+    }
+
+    .highlight-box {
+      background: #fff9c4;
+      border: 1px solid #f39c12;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    .highlight-box strong {
+      color: #d68910;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .tutorial-section {
+        margin: 10px;
+        padding: 20px;
+      }
+      
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .nav-link {
+        text-align: center;
+      }
+      
+      .word-examples {
+        grid-template-columns: 1fr;
+      }
+      
+      .tutorial-section h2 {
+        font-size: 1.6em;
+      }
+      
+      .tutorial-section h3 {
+        font-size: 1.2em;
+      }
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>KK音标学习指南</h1>
+    <p>系统化学习音标知识，掌握发音技巧</p>
+  </div>
+
+  <div class="navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="phonetic-chart.html" class="nav-link">音标表</a>
+      <a href="tutorial.html" class="nav-link active">学习指南</a>
+      <a href="words.html" class="nav-link">单词练习</a>
+    </div>
+  </div>
+
+  <!-- 教程区域 -->
+  <div class="tutorial-section">
+    <h2>KK音标学习指南</h2>
+    
+    <h3>元音的作用和重要性</h3>
+    <p><strong>元音是音节的核心：</strong></p>
+    <ul>
+      <li>每个音节必须有一个元音</li>
+      <li>元音决定了单词的"骨架"和节拍</li>
+      <li>元音发音错误最容易造成误解</li>
+    </ul>
+
+    <div class="example-breakdown">
+      <strong>例子：</strong><br>
+      <code>cat [kæt]</code> - 元音 æ 是核心<br>
+      <code>computer [kəmˈpjutər]</code> - 有3个元音：ə, u, ər
+    </div>
+
+    <h3>元音 vs 辅音</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <thead>
+        <tr>
+          <th>特征</th>
+          <th>元音</th>
+          <th>辅音</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>气流</td>
+          <td>自由流动</td>
+          <td>受阻/摩擦</td>
+        </tr>
+        <tr>
+          <td>声带</td>
+          <td>总是振动</td>
+          <td>可振动可不振动</td>
+        </tr>
+        <tr>
+          <td>口型</td>
+          <td>相对开放</td>
+          <td>相对闭合</td>
+        </tr>
+        <tr>
+          <td>功能</td>
+          <td>音节核心</td>
+          <td>音节边界</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>双元音（Diphthongs）</h3>
+    <p><strong>定义：</strong> 在一个音节内，舌位从一个元音滑向另一个元音</p>
+    
+    <div class="highlight-box">
+      <p><strong>KK音标中的双元音：</strong></p>
+      <ul>
+        <li><code>/aɪ/</code> - like, my, eye</li>
+        <li><code>/aʊ/</code> - house, now, cow</li>
+        <li><code>/ɔɪ/</code> - boy, coin, voice</li>
+        <li><code>/eɪ/</code> - day, make, rain</li>
+        <li><code>/oʊ/</code> - go, home, boat</li>
+      </ul>
+    </div>
+
+    <h3>如何拆分元音辅音</h3>
+    <p><strong>实用方法：</strong></p>
+    <ol>
+      <li><strong>找元音字母：</strong> a, e, i, o, u, y</li>
+      <li><strong>查音标对应：</strong></li>
+    </ol>
+
+    <div class="example-breakdown">
+      <div class="phonetic-breakdown">
+单词: beautiful [ˈbjutəfəl]
+拆分: b-ju-t-ə-f-əl
+     辅音-元音-辅音-元音-辅音-元音
+      </div>
+    </div>
+
+    <ol start="3">
+      <li><strong>识别规律：</strong>
+        <ul>
+          <li><strong>开音节：</strong> make [mek] = 辅音+元音</li>
+          <li><strong>闭音节：</strong> cat [kæt] = 辅音+元音+辅音</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="highlight-box">
+      <p><strong>练习技巧：</strong></p>
+      <ul>
+        <li>先找到所有元音音标位置</li>
+        <li>剩余的就是辅音</li>
+        <li>注意：有些辅音会组合成一个音（如 th, ch, sh）</li>
+      </ul>
+    </div>
+
+    <p><strong>KK音标元音表：</strong></p>
+    <ul>
+      <li>单元音：/i, ɪ, e, ɛ, æ, ə, ʌ, ɑ, ɔ, o, ʊ, u/</li>
+      <li>双元音：/aɪ, aʊ, ɔɪ, eɪ, oʊ/</li>
+    </ul>
+
+    <p>建议练习时先从简单的CVC（辅音-元音-辅音）结构开始，比如 cat, dog, run。</p>
+
+    <h3>常见词汇KK音标拆解示例</h3>
+    <div class="word-examples">
+      <div class="word-card">
+        <h4>apple [ˈæpəl]</h4>
+        <div class="phonetic-breakdown">
+拆解: [ˈæ-p-ə-l]
+结构: 元音-辅音-元音-辅音
+重音: 第一音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>banana [bəˈnænə]</h4>
+        <div class="phonetic-breakdown">
+拆解: [b-ə-ˈn-æ-n-ə]
+结构: 辅音-元音-辅音-元音-辅音-元音
+重音: 第二音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>computer [kəmˈpjutər]</h4>
+        <div class="phonetic-breakdown">
+拆解: [k-ə-m-ˈp-j-u-t-ər]
+结构: 辅音-元音-辅音-辅音-半元音-元音-辅音-元音
+重音: 第二音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>beautiful [ˈbjutəfəl]</h4>
+        <div class="phonetic-breakdown">
+拆解: [ˈb-j-u-t-ə-f-ə-l]
+结构: 辅音-半元音-元音-辅音-元音-辅音-元音-辅音
+重音: 第一音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>important [ɪmˈpɔrtənt]</h4>
+        <div class="phonetic-breakdown">
+拆解: [ɪ-m-ˈp-ɔr-t-ə-n-t]
+结构: 元音-辅音-辅音-元音+r-辅音-元音-辅音-辅音
+重音: 第二音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>understand [ˌʌndərˈstænd]</h4>
+        <div class="phonetic-breakdown">
+拆解: [ˌʌ-n-d-ər-ˈs-t-æ-n-d]
+结构: 元音-辅音-辅音-元音+r-辅音-辅音-元音-辅音-辅音
+重音: 第三音节（次重音在第一音节）
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>yesterday [ˈjɛstərdeɪ]</h4>
+        <div class="phonetic-breakdown">
+拆解: [ˈj-ɛ-s-t-ər-d-eɪ]
+结构: 半元音-元音-辅音-辅音-元音+r-辅音-双元音
+重音: 第一音节
+        </div>
+      </div>
+
+      <div class="word-card">
+        <h4>pronunciation [prəˌnʌnsɪˈeɪʃən]</h4>
+        <div class="phonetic-breakdown">
+拆解: [p-r-ə-ˌn-ʌ-n-s-ɪ-ˈeɪ-ʃ-ə-n]
+结构: 辅音-辅音-元音-辅音-元音-辅音-辅音-元音-双元音-辅音-元音-辅音
+重音: 第四音节（次重音在第二音节）
+        </div>
+      </div>
+    </div>
+
+    <h3>学习建议</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>从基础开始：</strong> 先掌握单个音标的发音</li>
+        <li><strong>对比练习：</strong> 找相似音标进行对比练习</li>
+        <li><strong>实际应用：</strong> 用音标标注常用单词</li>
+        <li><strong>听力训练：</strong> 结合音频材料练习听辨</li>
+        <li><strong>重音规律：</strong> 注意单词的重音位置</li>
+      </ul>
+    </div>
+
+    <h3>推荐学习路径</h3>
+    <ol>
+      <li><strong>第一周：</strong> 熟悉音标表，能够识别所有音标符号</li>
+      <li><strong>第二周：</strong> 练习单个音标发音，重点关注元音</li>
+      <li><strong>第三周：</strong> 学习辅音发音，注意相似音标的区别</li>
+      <li><strong>第四周：</strong> 练习双元音和音标组合</li>
+      <li><strong>后续：</strong> 通过单词练习巩固，逐步提高速度和准确性</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 PhoneticSymbols. 用心学习每一个音标。</p>
+  </div>
+</body>
+
+</html>

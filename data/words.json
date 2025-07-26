@@ -1,0 +1,582 @@
+{
+  "words": [
+    {
+      "word": "cat",
+      "phonetic": "[kæt]",
+      "scene": "basic",
+      "meaning": "猫"
+    },
+    {
+      "word": "dog",
+      "phonetic": "[dɔg]",
+      "scene": "basic",
+      "meaning": "狗"
+    },
+    {
+      "word": "book",
+      "phonetic": "[bʊk]",
+      "scene": "basic",
+      "meaning": "书"
+    },
+    {
+      "word": "good",
+      "phonetic": "[gʊd]",
+      "scene": "basic",
+      "meaning": "好的"
+    },
+    {
+      "word": "run",
+      "phonetic": "[rʌn]",
+      "scene": "basic",
+      "meaning": "跑"
+    },
+    {
+      "word": "sun",
+      "phonetic": "[sʌn]",
+      "scene": "basic",
+      "meaning": "太阳"
+    },
+    {
+      "word": "red",
+      "phonetic": "[rɛd]",
+      "scene": "basic",
+      "meaning": "红色的"
+    },
+    {
+      "word": "big",
+      "phonetic": "[bɪg]",
+      "scene": "basic",
+      "meaning": "大的"
+    },
+    {
+      "word": "see",
+      "phonetic": "[si]",
+      "scene": "basic",
+      "meaning": "看见"
+    },
+    {
+      "word": "time",
+      "phonetic": "[taɪm]",
+      "scene": "basic",
+      "meaning": "时间"
+    },
+    {
+      "word": "like",
+      "phonetic": "[laɪk]",
+      "scene": "basic",
+      "meaning": "喜欢"
+    },
+    {
+      "word": "make",
+      "phonetic": "[meɪk]",
+      "scene": "basic",
+      "meaning": "制作"
+    },
+    {
+      "word": "house",
+      "phonetic": "[haʊs]",
+      "scene": "daily",
+      "meaning": "房子"
+    },
+    {
+      "word": "home",
+      "phonetic": "[hoʊm]",
+      "scene": "daily",
+      "meaning": "家"
+    },
+    {
+      "word": "family",
+      "phonetic": "[ˈfæməli]",
+      "scene": "daily",
+      "meaning": "家庭"
+    },
+    {
+      "word": "friend",
+      "phonetic": "[frɛnd]",
+      "scene": "daily",
+      "meaning": "朋友"
+    },
+    {
+      "word": "work",
+      "phonetic": "[wɝk]",
+      "scene": "daily",
+      "meaning": "工作"
+    },
+    {
+      "word": "school",
+      "phonetic": "[skul]",
+      "scene": "daily",
+      "meaning": "学校"
+    },
+    {
+      "word": "money",
+      "phonetic": "[ˈmʌni]",
+      "scene": "daily",
+      "meaning": "钱"
+    },
+    {
+      "word": "water",
+      "phonetic": "[ˈwɔtər]",
+      "scene": "daily",
+      "meaning": "水"
+    },
+    {
+      "word": "phone",
+      "phonetic": "[foʊn]",
+      "scene": "daily",
+      "meaning": "电话"
+    },
+    {
+      "word": "bed",
+      "phonetic": "[bɛd]",
+      "scene": "daily",
+      "meaning": "床"
+    },
+    {
+      "word": "chair",
+      "phonetic": "[tʃɛr]",
+      "scene": "daily",
+      "meaning": "椅子"
+    },
+    {
+      "word": "table",
+      "phonetic": "[ˈteɪbəl]",
+      "scene": "daily",
+      "meaning": "桌子"
+    },
+    {
+      "word": "food",
+      "phonetic": "[fud]",
+      "scene": "food",
+      "meaning": "食物"
+    },
+    {
+      "word": "apple",
+      "phonetic": "[ˈæpəl]",
+      "scene": "food",
+      "meaning": "苹果"
+    },
+    {
+      "word": "banana",
+      "phonetic": "[bəˈnænə]",
+      "scene": "food",
+      "meaning": "香蕉"
+    },
+    {
+      "word": "orange",
+      "phonetic": "[ˈɔrɪndʒ]",
+      "scene": "food",
+      "meaning": "橙子"
+    },
+    {
+      "word": "bread",
+      "phonetic": "[brɛd]",
+      "scene": "food",
+      "meaning": "面包"
+    },
+    {
+      "word": "milk",
+      "phonetic": "[mɪlk]",
+      "scene": "food",
+      "meaning": "牛奶"
+    },
+    {
+      "word": "coffee",
+      "phonetic": "[ˈkɔfi]",
+      "scene": "food",
+      "meaning": "咖啡"
+    },
+    {
+      "word": "tea",
+      "phonetic": "[ti]",
+      "scene": "food",
+      "meaning": "茶"
+    },
+    {
+      "word": "sugar",
+      "phonetic": "[ˈʃʊgər]",
+      "scene": "food",
+      "meaning": "糖"
+    },
+    {
+      "word": "chicken",
+      "phonetic": "[ˈtʃɪkən]",
+      "scene": "food",
+      "meaning": "鸡肉"
+    },
+    {
+      "word": "fish",
+      "phonetic": "[fɪʃ]",
+      "scene": "food",
+      "meaning": "鱼"
+    },
+    {
+      "word": "rice",
+      "phonetic": "[raɪs]",
+      "scene": "food",
+      "meaning": "米饭"
+    },
+    {
+      "word": "computer",
+      "phonetic": "[kəmˈpjutər]",
+      "scene": "computer",
+      "meaning": "计算机"
+    },
+    {
+      "word": "software",
+      "phonetic": "[ˈsɔftwɛr]",
+      "scene": "computer",
+      "meaning": "软件"
+    },
+    {
+      "word": "hardware",
+      "phonetic": "[ˈhɑrdwɛr]",
+      "scene": "computer",
+      "meaning": "硬件"
+    },
+    {
+      "word": "program",
+      "phonetic": "[ˈproʊgræm]",
+      "scene": "computer",
+      "meaning": "程序"
+    },
+    {
+      "word": "website",
+      "phonetic": "[ˈwɛbsaɪt]",
+      "scene": "computer",
+      "meaning": "网站"
+    },
+    {
+      "word": "internet",
+      "phonetic": "[ˈɪntərˌnɛt]",
+      "scene": "computer",
+      "meaning": "互联网"
+    },
+    {
+      "word": "keyboard",
+      "phonetic": "[ˈkiˌbɔrd]",
+      "scene": "computer",
+      "meaning": "键盘"
+    },
+    {
+      "word": "mouse",
+      "phonetic": "[maʊs]",
+      "scene": "computer",
+      "meaning": "鼠标"
+    },
+    {
+      "word": "screen",
+      "phonetic": "[skrin]",
+      "scene": "computer",
+      "meaning": "屏幕"
+    },
+    {
+      "word": "download",
+      "phonetic": "[ˈdaʊnˌloʊd]",
+      "scene": "computer",
+      "meaning": "下载"
+    },
+    {
+      "word": "upload",
+      "phonetic": "[ˈʌpˌloʊd]",
+      "scene": "computer",
+      "meaning": "上传"
+    },
+    {
+      "word": "database",
+      "phonetic": "[ˈdeɪtəˌbeɪs]",
+      "scene": "computer",
+      "meaning": "数据库"
+    },
+    {
+      "word": "clothes",
+      "phonetic": "[kloʊz]",
+      "scene": "clothing",
+      "meaning": "衣服"
+    },
+    {
+      "word": "shirt",
+      "phonetic": "[ʃɝt]",
+      "scene": "clothing",
+      "meaning": "衬衫"
+    },
+    {
+      "word": "pants",
+      "phonetic": "[pænts]",
+      "scene": "clothing",
+      "meaning": "裤子"
+    },
+    {
+      "word": "dress",
+      "phonetic": "[drɛs]",
+      "scene": "clothing",
+      "meaning": "连衣裙"
+    },
+    {
+      "word": "shoes",
+      "phonetic": "[ʃuz]",
+      "scene": "clothing",
+      "meaning": "鞋子"
+    },
+    {
+      "word": "hat",
+      "phonetic": "[hæt]",
+      "scene": "clothing",
+      "meaning": "帽子"
+    },
+    {
+      "word": "jacket",
+      "phonetic": "[ˈdʒækət]",
+      "scene": "clothing",
+      "meaning": "夹克"
+    },
+    {
+      "word": "socks",
+      "phonetic": "[sɑks]",
+      "scene": "clothing",
+      "meaning": "袜子"
+    },
+    {
+      "word": "watch",
+      "phonetic": "[wɑtʃ]",
+      "scene": "clothing",
+      "meaning": "手表"
+    },
+    {
+      "word": "glasses",
+      "phonetic": "[ˈglæsəz]",
+      "scene": "clothing",
+      "meaning": "眼镜"
+    },
+    {
+      "word": "ring",
+      "phonetic": "[rɪŋ]",
+      "scene": "clothing",
+      "meaning": "戒指"
+    },
+    {
+      "word": "belt",
+      "phonetic": "[bɛlt]",
+      "scene": "clothing",
+      "meaning": "腰带"
+    },
+    {
+      "word": "sport",
+      "phonetic": "[spɔrt]",
+      "scene": "sports",
+      "meaning": "运动"
+    },
+    {
+      "word": "football",
+      "phonetic": "[ˈfʊtˌbɔl]",
+      "scene": "sports",
+      "meaning": "足球"
+    },
+    {
+      "word": "basketball",
+      "phonetic": "[ˈbæskətˌbɔl]",
+      "scene": "sports",
+      "meaning": "篮球"
+    },
+    {
+      "word": "tennis",
+      "phonetic": "[ˈtɛnəs]",
+      "scene": "sports",
+      "meaning": "网球"
+    },
+    {
+      "word": "swimming",
+      "phonetic": "[ˈswɪmɪŋ]",
+      "scene": "sports",
+      "meaning": "游泳"
+    },
+    {
+      "word": "running",
+      "phonetic": "[ˈrʌnɪŋ]",
+      "scene": "sports",
+      "meaning": "跑步"
+    },
+    {
+      "word": "gym",
+      "phonetic": "[dʒɪm]",
+      "scene": "sports",
+      "meaning": "健身房"
+    },
+    {
+      "word": "exercise",
+      "phonetic": "[ˈɛksərˌsaɪz]",
+      "scene": "sports",
+      "meaning": "锻炼"
+    },
+    {
+      "word": "fitness",
+      "phonetic": "[ˈfɪtnəs]",
+      "scene": "sports",
+      "meaning": "健身"
+    },
+    {
+      "word": "team",
+      "phonetic": "[tim]",
+      "scene": "sports",
+      "meaning": "团队"
+    },
+    {
+      "word": "game",
+      "phonetic": "[geɪm]",
+      "scene": "sports",
+      "meaning": "游戏/比赛"
+    },
+    {
+      "word": "match",
+      "phonetic": "[mætʃ]",
+      "scene": "sports",
+      "meaning": "比赛"
+    },
+    {
+      "word": "travel",
+      "phonetic": "[ˈtrævəl]",
+      "scene": "travel",
+      "meaning": "旅行"
+    },
+    {
+      "word": "trip",
+      "phonetic": "[trɪp]",
+      "scene": "travel",
+      "meaning": "旅程"
+    },
+    {
+      "word": "car",
+      "phonetic": "[kɑr]",
+      "scene": "travel",
+      "meaning": "汽车"
+    },
+    {
+      "word": "bus",
+      "phonetic": "[bʌs]",
+      "scene": "travel",
+      "meaning": "公交车"
+    },
+    {
+      "word": "train",
+      "phonetic": "[treɪn]",
+      "scene": "travel",
+      "meaning": "火车"
+    },
+    {
+      "word": "plane",
+      "phonetic": "[pleɪn]",
+      "scene": "travel",
+      "meaning": "飞机"
+    },
+    {
+      "word": "airport",
+      "phonetic": "[ˈɛrˌpɔrt]",
+      "scene": "travel",
+      "meaning": "机场"
+    },
+    {
+      "word": "hotel",
+      "phonetic": "[hoʊˈtɛl]",
+      "scene": "travel",
+      "meaning": "酒店"
+    },
+    {
+      "word": "ticket",
+      "phonetic": "[ˈtɪkət]",
+      "scene": "travel",
+      "meaning": "票"
+    },
+    {
+      "word": "map",
+      "phonetic": "[mæp]",
+      "scene": "travel",
+      "meaning": "地图"
+    },
+    {
+      "word": "road",
+      "phonetic": "[roʊd]",
+      "scene": "travel",
+      "meaning": "道路"
+    },
+    {
+      "word": "station",
+      "phonetic": "[ˈsteɪʃən]",
+      "scene": "travel",
+      "meaning": "车站"
+    },
+    {
+      "word": "business",
+      "phonetic": "[ˈbɪznəs]",
+      "scene": "business",
+      "meaning": "商务/生意"
+    },
+    {
+      "word": "office",
+      "phonetic": "[ˈɔfəs]",
+      "scene": "business",
+      "meaning": "办公室"
+    },
+    {
+      "word": "meeting",
+      "phonetic": "[ˈmitɪŋ]",
+      "scene": "business",
+      "meaning": "会议"
+    },
+    {
+      "word": "project",
+      "phonetic": "[ˈprɑdʒɛkt]",
+      "scene": "business",
+      "meaning": "项目"
+    },
+    {
+      "word": "manager",
+      "phonetic": "[ˈmænədʒər]",
+      "scene": "business",
+      "meaning": "经理"
+    },
+    {
+      "word": "company",
+      "phonetic": "[ˈkʌmpəni]",
+      "scene": "business",
+      "meaning": "公司"
+    },
+    {
+      "word": "report",
+      "phonetic": "[rɪˈpɔrt]",
+      "scene": "business",
+      "meaning": "报告"
+    },
+    {
+      "word": "presentation",
+      "phonetic": "[ˌprɛzənˈteɪʃən]",
+      "scene": "business",
+      "meaning": "演示"
+    },
+    {
+      "word": "contract",
+      "phonetic": "[ˈkɒntrækt]",
+      "scene": "business",
+      "meaning": "合同"
+    },
+    {
+      "word": "customer",
+      "phonetic": "[ˈkʌstəmər]",
+      "scene": "business",
+      "meaning": "客户"
+    },
+    {
+      "word": "email",
+      "phonetic": "[ˈiˌmeɪl]",
+      "scene": "business",
+      "meaning": "电子邮件"
+    },
+    {
+      "word": "document",
+      "phonetic": "[ˈdɑkjəmənt]",
+      "scene": "business",
+      "meaning": "文档"
+    }
+  ]
+}
+
+   
